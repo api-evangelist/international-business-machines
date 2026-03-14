@@ -1,0 +1,14 @@
+name: International Business Machines
+description: >-
+  APIs for IBM (International Business Machines), a technology company
+  providing capabilities that help practitioners build, manage, or
+  improve systems and processes.
+url: https://www.ibm.com
+created: "2025-01-01"
+modified: "2025-01-01"
+specificationVersion: "0.18"
+tags:
+- IBM
+maintainers:
+- FN: Kin Lane
+  email: info@apievangelist.com
