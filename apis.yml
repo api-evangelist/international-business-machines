@@ -1,6 +1,25 @@
 aid: international-business-machines
+name: International Business Machines
+description: >-
+  IBM (International Business Machines) provides a comprehensive suite of cloud
+  APIs spanning artificial intelligence, infrastructure, and data management. Key
+  offerings include watsonx.ai for foundation model inference, watsonx Assistant
+  for conversational AI, Natural Language Understanding and Speech services for
+  text and audio processing, Cloud Object Storage for scalable data persistence,
+  VPC infrastructure for virtual networking, and Kubernetes Service for container
+  orchestration.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Cloud
+  - Artificial Intelligence
+  - Enterprise
+  - IBM
 url: >-
   https://raw.githubusercontent.com/api-evangelist/international-business-machines/refs/heads/main/apis.yml
+created: '2025-01-01'
+modified: '2026-03-16'
+specificationVersion: '0.19'
 apis:
   - aid: international-business-machines:watsonx-ai
     name: IBM watsonx.ai API
@@ -156,48 +175,17 @@ apis:
       of virtual server instances, networks, storage volumes, load balancers,
       security groups, and other infrastructure resources within an isolated
       virtual network on IBM Cloud.
-name: International Business Machines
-tags:
-  - Cloud
-  - Artificial Intelligence
-  - Enterprise
-type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-access: 3rd-Party
 common:
   - url: https://cloud.ibm.com/docs
-    name: IBM Cloud Documentation
     type: Documentation
-    description: 'null'
   - url: https://developer.ibm.com/blogs/
-    name: IBM Developer Blog
     type: Blog
-    description: 'null'
   - url: https://cloud.ibm.com/unifiedsupport/supportcenter
-    name: IBM Cloud Support
     type: Support
-    description: 'null'
   - url: https://developer.ibm.com/apis/catalog
-    name: IBM API Hub
     type: Portal
-    description: 'null'
   - url: https://github.com/IBM
-    name: IBM GitHub Organization
-    type: GitHub
-    description: 'null'
-created: '2025-01-01'
-modified: '2026-03-14'
-position: Consumer
-description: >-
-  IBM (International Business Machines) provides a comprehensive suite of cloud
-  APIs spanning artificial intelligence, infrastructure, and data management. Key
-  offerings include watsonx.ai for foundation model inference, watsonx Assistant
-  for conversational AI, Natural Language Understanding and Speech services for
-  text and audio processing, Cloud Object Storage for scalable data persistence,
-  VPC infrastructure for virtual networking, and Kubernetes Service for container
-  orchestration. These APIs enable enterprises to build, deploy, and manage
-  intelligent applications at scale.
+    type: GitHub Organization
 maintainers:
   - FN: Kin Lane
-    email: info@apievangelist.com
-specificationVersion: '0.19'
+    email: kin@apievangelist.com
