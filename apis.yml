@@ -22,7 +22,7 @@ modified: '2026-03-16'
 specificationVersion: '0.19'
 apis:
   - aid: international-business-machines:watsonx-ai
-    name: IBM watsonx.ai API
+    name: IBM Watsonx.ai API
     tags:
       - Artificial Intelligence
       - Machine Learning
@@ -45,7 +45,7 @@ apis:
       access to multiple open source and IBM foundation models through a unified
       REST interface for building AI-powered applications.
   - aid: international-business-machines:watsonx-assistant
-    name: IBM watsonx Assistant v2 API
+    name: IBM Watsonx Assistant V2 API
     tags:
       - Artificial Intelligence
       - Conversational AI

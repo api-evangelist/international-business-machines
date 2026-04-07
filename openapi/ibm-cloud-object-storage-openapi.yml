@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: IBM Cloud Object Storage API
+  title: International Business Machines IBM Cloud Object Storage API
   description: >-
     The IBM Cloud Object Storage API provides a RESTful interface compatible
     with S3 for storing and retrieving objects in buckets. It supports features
@@ -24,7 +24,7 @@ paths:
   /:
     get:
       operationId: listBuckets
-      summary: List buckets
+      summary: International Business Machines List buckets
       description: List all buckets in the service instance.
       tags:
         - Buckets
@@ -44,7 +44,7 @@ paths:
   /{bucket}:
     put:
       operationId: createBucket
-      summary: Create a bucket
+      summary: International Business Machines Create a bucket
       description: Create a new bucket.
       tags:
         - Buckets
@@ -64,7 +64,7 @@ paths:
           description: Bucket created
     delete:
       operationId: deleteBucket
-      summary: Delete a bucket
+      summary: International Business Machines Delete a bucket
       description: Delete an empty bucket.
       tags:
         - Buckets
@@ -79,7 +79,7 @@ paths:
           description: Bucket deleted
     get:
       operationId: listObjects
-      summary: List objects in a bucket
+      summary: International Business Machines List objects in a bucket
       description: List objects stored in a bucket.
       tags:
         - Objects
@@ -103,7 +103,7 @@ paths:
   /{bucket}/{key}:
     put:
       operationId: putObject
-      summary: Upload an object
+      summary: International Business Machines Upload an object
       description: Upload an object to a bucket.
       tags:
         - Objects
@@ -129,7 +129,7 @@ paths:
           description: Object uploaded
     get:
       operationId: getObject
-      summary: Get an object
+      summary: International Business Machines Get an object
       description: Retrieve an object from a bucket.
       tags:
         - Objects
@@ -154,7 +154,7 @@ paths:
                 format: binary
     delete:
       operationId: deleteObject
-      summary: Delete an object
+      summary: International Business Machines Delete an object
       description: Delete an object from a bucket.
       tags:
         - Objects

@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: IBM Cloud VPC API
+  title: International Business Machines IBM Cloud VPC API
   description: >-
     The IBM Cloud Virtual Private Cloud (VPC) API enables you to programmatically
     provision and manage virtual server instances, networks, storage volumes,
@@ -22,7 +22,7 @@ paths:
   /v1/vpcs:
     get:
       operationId: listVpcs
-      summary: List VPCs
+      summary: International Business Machines List VPCs
       description: List all VPCs in the region.
       tags:
         - VPCs
@@ -53,7 +53,7 @@ paths:
                       $ref: '#/components/schemas/VPC'
     post:
       operationId: createVpc
-      summary: Create a VPC
+      summary: International Business Machines Create a VPC
       description: Create a new VPC.
       tags:
         - VPCs
@@ -92,7 +92,7 @@ paths:
   /v1/instances:
     get:
       operationId: listInstances
-      summary: List instances
+      summary: International Business Machines List instances
       description: List all virtual server instances in the region.
       tags:
         - Instances
@@ -112,7 +112,7 @@ paths:
           description: Successful response
     post:
       operationId: createInstance
-      summary: Create an instance
+      summary: International Business Machines Create an instance
       description: Create a new virtual server instance.
       tags:
         - Instances
@@ -139,7 +139,7 @@ paths:
   /v1/subnets:
     get:
       operationId: listSubnets
-      summary: List subnets
+      summary: International Business Machines List subnets
       description: List all subnets in the region.
       tags:
         - Subnets
@@ -160,7 +160,7 @@ paths:
   /v1/security_groups:
     get:
       operationId: listSecurityGroups
-      summary: List security groups
+      summary: International Business Machines List security groups
       description: List all security groups in the region.
       tags:
         - Security Groups
@@ -181,7 +181,7 @@ paths:
   /v1/volumes:
     get:
       operationId: listVolumes
-      summary: List volumes
+      summary: International Business Machines List volumes
       description: List all block storage volumes in the region.
       tags:
         - Volumes

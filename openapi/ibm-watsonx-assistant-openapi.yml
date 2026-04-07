@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: IBM watsonx Assistant v2 API
+  title: International Business Machines IBM watsonx Assistant v2 API
   description: >-
     The IBM watsonx Assistant v2 API enables developers to build conversational
     interfaces into applications, devices, and channels. The API supports
@@ -24,7 +24,7 @@ paths:
   /v2/assistants/{assistant_id}/sessions:
     post:
       operationId: createSession
-      summary: Create a session
+      summary: International Business Machines Create a session
       description: >-
         Create a new session for an assistant. A session is used to send user
         input to an assistant and receive responses.
@@ -51,7 +51,7 @@ paths:
   /v2/assistants/{assistant_id}/sessions/{session_id}:
     delete:
       operationId: deleteSession
-      summary: Delete a session
+      summary: International Business Machines Delete a session
       description: Delete an existing session.
       tags:
         - Sessions
@@ -77,7 +77,7 @@ paths:
   /v2/assistants/{assistant_id}/sessions/{session_id}/message:
     post:
       operationId: message
-      summary: Send user input to assistant
+      summary: International Business Machines Send user input to assistant
       description: >-
         Send user input to an assistant and receive a response within the
         context of a session.
@@ -115,7 +115,7 @@ paths:
   /v2/assistants/{assistant_id}/message:
     post:
       operationId: messageStateless
-      summary: Send user input to assistant (stateless)
+      summary: International Business Machines Send user input to assistant (stateless)
       description: >-
         Send user input to an assistant without maintaining a session.
       tags:
@@ -147,7 +147,7 @@ paths:
   /v2/assistants/{assistant_id}/environments:
     get:
       operationId: listEnvironments
-      summary: List environments
+      summary: International Business Machines List environments
       description: List the environments associated with an assistant.
       tags:
         - Environments

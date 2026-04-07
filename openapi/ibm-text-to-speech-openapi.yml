@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: IBM Text to Speech API
+  title: International Business Machines IBM Text to Speech API
   description: >-
     The IBM Text to Speech API provides speech-synthesis capabilities to
     convert written text into natural-sounding speech in a variety of languages,
@@ -21,7 +21,7 @@ paths:
   /v1/synthesize:
     post:
       operationId: synthesize
-      summary: Synthesize audio
+      summary: International Business Machines Synthesize audio
       description: >-
         Synthesize text to audio. Returns the audio in the specified format.
       tags:
@@ -62,7 +62,7 @@ paths:
   /v1/voices:
     get:
       operationId: listVoices
-      summary: List voices
+      summary: International Business Machines List voices
       description: List all available voices.
       tags:
         - Voices
@@ -81,7 +81,7 @@ paths:
   /v1/voices/{voice}:
     get:
       operationId: getVoice
-      summary: Get a voice
+      summary: International Business Machines Get a voice
       description: Get information about a specific voice.
       tags:
         - Voices
@@ -101,7 +101,7 @@ paths:
   /v1/pronunciation:
     get:
       operationId: getPronunciation
-      summary: Get pronunciation
+      summary: International Business Machines Get pronunciation
       description: Get the phonetic pronunciation of a word.
       tags:
         - Pronunciation

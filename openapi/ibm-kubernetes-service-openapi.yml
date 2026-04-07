@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: IBM Cloud Kubernetes Service API
+  title: International Business Machines IBM Cloud Kubernetes Service API
   description: >-
     The IBM Cloud Kubernetes Service API enables you to create and manage
     Kubernetes clusters and worker nodes on IBM Cloud. It supports both
@@ -20,7 +20,7 @@ paths:
   /v2/getClusters:
     get:
       operationId: getClusters
-      summary: List clusters
+      summary: International Business Machines List clusters
       description: List all Kubernetes and OpenShift clusters in the account.
       tags:
         - Clusters
@@ -36,7 +36,7 @@ paths:
   /v2/getCluster:
     get:
       operationId: getCluster
-      summary: Get a cluster
+      summary: International Business Machines Get a cluster
       description: Get details about a specific cluster.
       tags:
         - Clusters
@@ -56,7 +56,7 @@ paths:
   /v2/createCluster:
     post:
       operationId: createCluster
-      summary: Create a cluster
+      summary: International Business Machines Create a cluster
       description: Create a new Kubernetes or OpenShift cluster.
       tags:
         - Clusters
@@ -72,7 +72,7 @@ paths:
   /v2/removeCluster:
     delete:
       operationId: removeCluster
-      summary: Delete a cluster
+      summary: International Business Machines Delete a cluster
       description: Delete a cluster and its associated worker nodes.
       tags:
         - Clusters
@@ -88,7 +88,7 @@ paths:
   /v2/getWorkers:
     get:
       operationId: getWorkers
-      summary: List worker nodes
+      summary: International Business Machines List worker nodes
       description: List all worker nodes in a cluster.
       tags:
         - Worker Nodes
@@ -110,7 +110,7 @@ paths:
   /v2/getWorkerPools:
     get:
       operationId: getWorkerPools
-      summary: List worker pools
+      summary: International Business Machines List worker pools
       description: List all worker pools in a cluster.
       tags:
         - Worker Pools

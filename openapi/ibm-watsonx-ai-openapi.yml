@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: IBM watsonx.ai API
+  title: International Business Machines IBM watsonx.ai API
   description: >-
     The IBM watsonx.ai API enables developers to run text inference, prompt
     tuning, and other operations on Large Language Models (LLMs). It provides
@@ -26,7 +26,7 @@ paths:
   /ml/v1/text/generation:
     post:
       operationId: textGeneration
-      summary: Generate text
+      summary: International Business Machines Generate text
       description: >-
         Infer the next tokens for a given deployed model with a set of
         parameters.
@@ -59,7 +59,7 @@ paths:
   /ml/v1/text/generation_stream:
     post:
       operationId: textGenerationStream
-      summary: Generate text (streaming)
+      summary: International Business Machines Generate text (streaming)
       description: >-
         Infer the next tokens for a given deployed model with a set of
         parameters, returning results as a stream.
@@ -87,7 +87,7 @@ paths:
   /ml/v1/text/embeddings:
     post:
       operationId: textEmbeddings
-      summary: Generate embeddings
+      summary: International Business Machines Generate embeddings
       description: >-
         Generate embeddings from text input for use in downstream tasks such as
         search and retrieval.
@@ -115,7 +115,7 @@ paths:
   /ml/v1/foundation_model_specs:
     get:
       operationId: listFoundationModels
-      summary: List foundation models
+      summary: International Business Machines List foundation models
       description: Retrieve the list of available foundation models.
       tags:
         - Models
@@ -143,7 +143,7 @@ paths:
   /ml/v1/text/tokenization:
     post:
       operationId: textTokenization
-      summary: Tokenize text
+      summary: International Business Machines Tokenize text
       description: >-
         Return the tokens for the provided text with the given model.
       tags:
