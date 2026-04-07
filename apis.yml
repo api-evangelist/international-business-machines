@@ -11,8 +11,8 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Cloud
   - Artificial Intelligence
+  - Cloud
   - Enterprise
   - IBM
 url: >-
@@ -48,8 +48,8 @@ apis:
     name: IBM Watsonx Assistant V2 API
     tags:
       - Artificial Intelligence
-      - Conversational AI
       - Chatbots
+      - Conversational AI
     humanURL: https://cloud.ibm.com/apidocs/assistant-v2
     properties:
       - url: https://cloud.ibm.com/apidocs/assistant-v2
@@ -86,8 +86,8 @@ apis:
     name: IBM Speech to Text API
     tags:
       - Artificial Intelligence
-      - Speech Recognition
       - Audio
+      - Speech Recognition
     humanURL: https://cloud.ibm.com/apidocs/speech-to-text
     properties:
       - url: https://cloud.ibm.com/apidocs/speech-to-text
@@ -105,8 +105,8 @@ apis:
     name: IBM Text to Speech API
     tags:
       - Artificial Intelligence
-      - Speech Synthesis
       - Audio
+      - Speech Synthesis
     humanURL: https://cloud.ibm.com/apidocs/text-to-speech
     properties:
       - url: https://cloud.ibm.com/apidocs/text-to-speech
@@ -121,9 +121,9 @@ apis:
   - aid: international-business-machines:cloud-object-storage
     name: IBM Cloud Object Storage API
     tags:
-      - Storage
       - Cloud
       - Objects
+      - Storage
     humanURL: https://cloud.ibm.com/docs/cloud-object-storage
     properties:
       - url: https://cloud.ibm.com/docs/cloud-object-storage
@@ -140,9 +140,9 @@ apis:
   - aid: international-business-machines:kubernetes-service
     name: IBM Cloud Kubernetes Service API
     tags:
+      - Cloud
       - Containers
       - Kubernetes
-      - Cloud
     humanURL: https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2
     properties:
       - url: https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2
@@ -159,9 +159,9 @@ apis:
   - aid: international-business-machines:vpc
     name: IBM Cloud VPC API
     tags:
+      - Cloud
       - Infrastructure
       - Networking
-      - Cloud
     humanURL: https://cloud.ibm.com/apidocs/vpc/latest
     properties:
       - url: https://cloud.ibm.com/apidocs/vpc/latest

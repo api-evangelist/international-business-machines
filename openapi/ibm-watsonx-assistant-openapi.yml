@@ -278,9 +278,9 @@ components:
 security:
   - bearerAuth: []
 tags:
-  - name: Sessions
-    description: Manage conversation sessions.
-  - name: Messages
-    description: Send messages to an assistant.
   - name: Environments
     description: Manage assistant environments.
+  - name: Messages
+    description: Send messages to an assistant.
+  - name: Sessions
+    description: Manage conversation sessions.

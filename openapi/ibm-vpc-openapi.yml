@@ -286,13 +286,13 @@ components:
 security:
   - bearerAuth: []
 tags:
-  - name: VPCs
-    description: Manage Virtual Private Clouds.
   - name: Instances
     description: Manage virtual server instances.
-  - name: Subnets
-    description: Manage subnets.
   - name: Security Groups
     description: Manage security groups.
+  - name: Subnets
+    description: Manage subnets.
   - name: Volumes
     description: Manage block storage volumes.
+  - name: VPCs
+    description: Manage Virtual Private Clouds.

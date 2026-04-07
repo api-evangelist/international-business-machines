@@ -319,9 +319,9 @@ components:
 security:
   - bearerAuth: []
 tags:
-  - name: Text Generation
-    description: Generate text using foundation models.
   - name: Embeddings
     description: Generate text embeddings.
   - name: Models
     description: Retrieve available foundation model information.
+  - name: Text Generation
+    description: Generate text using foundation models.

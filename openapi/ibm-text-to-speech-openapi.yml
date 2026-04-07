@@ -157,9 +157,9 @@ components:
 security:
   - bearerAuth: []
 tags:
+  - name: Pronunciation
+    description: Get word pronunciations.
   - name: Synthesis
     description: Synthesize text to audio.
   - name: Voices
     description: Manage available voices.
-  - name: Pronunciation
-    description: Get word pronunciations.

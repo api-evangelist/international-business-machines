@@ -191,9 +191,9 @@ components:
 security:
   - bearerAuth: []
 tags:
-  - name: Recognition
-    description: Recognize and transcribe audio.
-  - name: Models
-    description: Manage speech recognition models.
   - name: Custom Language Models
     description: Create and manage custom language models.
+  - name: Models
+    description: Manage speech recognition models.
+  - name: Recognition
+    description: Recognize and transcribe audio.
