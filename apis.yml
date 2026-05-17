@@ -165,7 +165,7 @@ common:
   - url: https://developer.ibm.com/apis/catalog
     type: Portal
   - url: https://github.com/IBM
-    type: GitHub Organization
+    type: GitHubOrganization
   - type: Features
     data:
       - 'International Business Machines (IBM): hundreds of services across Cloud + AI + Enterprise Software'
