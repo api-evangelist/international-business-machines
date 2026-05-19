@@ -1,0 +1,86 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: International Business Machines IBM Cloud VPC API — Volumes
+  description: 'International Business Machines IBM Cloud VPC API — Volumes. 1 operations. Lead operation: International Business
+    Machines List volumes. Self-contained Naftiko capability covering one International Business Machines business surface.'
+  tags:
+  - International Business Machines
+  - Volumes
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    INTERNATIONAL_BUSINESS_MACHINES_API_KEY: INTERNATIONAL_BUSINESS_MACHINES_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ibm-vpc-volumes
+    baseUri: https://us-south.iaas.cloud.ibm.com
+    description: International Business Machines IBM Cloud VPC API — Volumes business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: v1-volumes
+      path: /v1/volumes
+      operations:
+      - name: listvolumes
+        method: GET
+        description: International Business Machines List volumes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: version
+          in: query
+          type: string
+          required: true
+        - name: generation
+          in: query
+          type: integer
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.INTERNATIONAL_BUSINESS_MACHINES_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ibm-vpc-volumes-rest
+    port: 8080
+    description: REST adapter for International Business Machines IBM Cloud VPC API — Volumes. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/v1/volumes
+      name: v1-volumes
+      description: REST surface for v1-volumes.
+      operations:
+      - method: GET
+        name: listvolumes
+        description: International Business Machines List volumes
+        call: ibm-vpc-volumes.listvolumes
+        with:
+          version: rest.version
+          generation: rest.generation
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ibm-vpc-volumes-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for International Business Machines IBM Cloud VPC API — Volumes. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: international-business-machines-list-volumes
+      description: International Business Machines List volumes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ibm-vpc-volumes.listvolumes
+      with:
+        version: tools.version
+        generation: tools.generation
+      outputParameters:
+      - type: object
+        mapping: $.

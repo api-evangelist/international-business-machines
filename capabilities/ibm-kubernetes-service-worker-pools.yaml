@@ -1,0 +1,81 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: International Business Machines IBM Cloud Kubernetes Service API — Worker Pools
+  description: 'International Business Machines IBM Cloud Kubernetes Service API — Worker Pools. 1 operations. Lead operation:
+    International Business Machines List worker pools. Self-contained Naftiko capability covering one International Business
+    Machines business surface.'
+  tags:
+  - International Business Machines
+  - Worker Pools
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    INTERNATIONAL_BUSINESS_MACHINES_API_KEY: INTERNATIONAL_BUSINESS_MACHINES_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ibm-kubernetes-service-worker-pools
+    baseUri: https://containers.cloud.ibm.com
+    description: International Business Machines IBM Cloud Kubernetes Service API — Worker Pools business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: v2-getWorkerPools
+      path: /v2/getWorkerPools
+      operations:
+      - name: getworkerpools
+        method: GET
+        description: International Business Machines List worker pools
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: cluster
+          in: query
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.INTERNATIONAL_BUSINESS_MACHINES_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ibm-kubernetes-service-worker-pools-rest
+    port: 8080
+    description: REST adapter for International Business Machines IBM Cloud Kubernetes Service API — Worker Pools. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/v2/getworkerpools
+      name: v2-getworkerpools
+      description: REST surface for v2-getWorkerPools.
+      operations:
+      - method: GET
+        name: getworkerpools
+        description: International Business Machines List worker pools
+        call: ibm-kubernetes-service-worker-pools.getworkerpools
+        with:
+          cluster: rest.cluster
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ibm-kubernetes-service-worker-pools-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for International Business Machines IBM Cloud Kubernetes Service API — Worker Pools. One tool
+      per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: international-business-machines-list-worker
+      description: International Business Machines List worker pools
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ibm-kubernetes-service-worker-pools.getworkerpools
+      with:
+        cluster: tools.cluster
+      outputParameters:
+      - type: object
+        mapping: $.

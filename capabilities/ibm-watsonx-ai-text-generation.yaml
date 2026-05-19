@@ -1,0 +1,185 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: International Business Machines IBM watsonx.ai API — Text Generation
+  description: 'International Business Machines IBM watsonx.ai API — Text Generation. 3 operations. Lead operation: International
+    Business Machines Generate text. Self-contained Naftiko capability covering one International Business Machines business
+    surface.'
+  tags:
+  - International Business Machines
+  - Text Generation
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    INTERNATIONAL_BUSINESS_MACHINES_API_KEY: INTERNATIONAL_BUSINESS_MACHINES_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ibm-watsonx-ai-text-generation
+    baseUri: https://us-south.ml.cloud.ibm.com
+    description: International Business Machines IBM watsonx.ai API — Text Generation business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: ml-v1-text-generation
+      path: /ml/v1/text/generation
+      operations:
+      - name: textgeneration
+        method: POST
+        description: International Business Machines Generate text
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: version
+          in: query
+          type: string
+          description: The API version date.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: ml-v1-text-generation_stream
+      path: /ml/v1/text/generation_stream
+      operations:
+      - name: textgenerationstream
+        method: POST
+        description: International Business Machines Generate text (streaming)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: version
+          in: query
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: ml-v1-text-tokenization
+      path: /ml/v1/text/tokenization
+      operations:
+      - name: texttokenization
+        method: POST
+        description: International Business Machines Tokenize text
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: version
+          in: query
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.INTERNATIONAL_BUSINESS_MACHINES_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ibm-watsonx-ai-text-generation-rest
+    port: 8080
+    description: REST adapter for International Business Machines IBM watsonx.ai API — Text Generation. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/ml/v1/text/generation
+      name: ml-v1-text-generation
+      description: REST surface for ml-v1-text-generation.
+      operations:
+      - method: POST
+        name: textgeneration
+        description: International Business Machines Generate text
+        call: ibm-watsonx-ai-text-generation.textgeneration
+        with:
+          version: rest.version
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/ml/v1/text/generation-stream
+      name: ml-v1-text-generation-stream
+      description: REST surface for ml-v1-text-generation_stream.
+      operations:
+      - method: POST
+        name: textgenerationstream
+        description: International Business Machines Generate text (streaming)
+        call: ibm-watsonx-ai-text-generation.textgenerationstream
+        with:
+          version: rest.version
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/ml/v1/text/tokenization
+      name: ml-v1-text-tokenization
+      description: REST surface for ml-v1-text-tokenization.
+      operations:
+      - method: POST
+        name: texttokenization
+        description: International Business Machines Tokenize text
+        call: ibm-watsonx-ai-text-generation.texttokenization
+        with:
+          version: rest.version
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ibm-watsonx-ai-text-generation-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for International Business Machines IBM watsonx.ai API — Text Generation. One tool per consumed
+      operation, routed inline through this capability's consumes block.
+    tools:
+    - name: international-business-machines-generate-text
+      description: International Business Machines Generate text
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ibm-watsonx-ai-text-generation.textgeneration
+      with:
+        version: tools.version
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: international-business-machines-generate-text-2
+      description: International Business Machines Generate text (streaming)
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ibm-watsonx-ai-text-generation.textgenerationstream
+      with:
+        version: tools.version
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: international-business-machines-tokenize-text
+      description: International Business Machines Tokenize text
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ibm-watsonx-ai-text-generation.texttokenization
+      with:
+        version: tools.version
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

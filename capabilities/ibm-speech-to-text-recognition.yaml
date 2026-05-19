@@ -1,0 +1,94 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: International Business Machines IBM Speech to Text API — Recognition
+  description: 'International Business Machines IBM Speech to Text API — Recognition. 1 operations. Lead operation: International
+    Business Machines Recognize audio. Self-contained Naftiko capability covering one International Business Machines business
+    surface.'
+  tags:
+  - International Business Machines
+  - Recognition
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    INTERNATIONAL_BUSINESS_MACHINES_API_KEY: INTERNATIONAL_BUSINESS_MACHINES_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ibm-speech-to-text-recognition
+    baseUri: https://api.us-south.speech-to-text.watson.cloud.ibm.com
+    description: International Business Machines IBM Speech to Text API — Recognition business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: v1-recognize
+      path: /v1/recognize
+      operations:
+      - name: recognize
+        method: POST
+        description: International Business Machines Recognize audio
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: model
+          in: query
+          type: string
+          description: The model to use for recognition.
+        - name: content-type
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.INTERNATIONAL_BUSINESS_MACHINES_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ibm-speech-to-text-recognition-rest
+    port: 8080
+    description: REST adapter for International Business Machines IBM Speech to Text API — Recognition. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/v1/recognize
+      name: v1-recognize
+      description: REST surface for v1-recognize.
+      operations:
+      - method: POST
+        name: recognize
+        description: International Business Machines Recognize audio
+        call: ibm-speech-to-text-recognition.recognize
+        with:
+          model: rest.model
+          content-type: rest.content-type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ibm-speech-to-text-recognition-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for International Business Machines IBM Speech to Text API — Recognition. One tool per consumed
+      operation, routed inline through this capability's consumes block.
+    tools:
+    - name: international-business-machines-recognize-audio
+      description: International Business Machines Recognize audio
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ibm-speech-to-text-recognition.recognize
+      with:
+        model: tools.model
+        content-type: tools.content-type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,92 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: International Business Machines IBM Text to Speech API — Synthesis
+  description: 'International Business Machines IBM Text to Speech API — Synthesis. 1 operations. Lead operation: International
+    Business Machines Synthesize audio. Self-contained Naftiko capability covering one International Business Machines business
+    surface.'
+  tags:
+  - International Business Machines
+  - Synthesis
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    INTERNATIONAL_BUSINESS_MACHINES_API_KEY: INTERNATIONAL_BUSINESS_MACHINES_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ibm-text-to-speech-synthesis
+    baseUri: https://api.us-south.text-to-speech.watson.cloud.ibm.com
+    description: International Business Machines IBM Text to Speech API — Synthesis business capability. Self-contained, no
+      shared references.
+    resources:
+    - name: v1-synthesize
+      path: /v1/synthesize
+      operations:
+      - name: synthesize
+        method: POST
+        description: International Business Machines Synthesize audio
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Accept
+          in: header
+          type: string
+        - name: voice
+          in: query
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.INTERNATIONAL_BUSINESS_MACHINES_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ibm-text-to-speech-synthesis-rest
+    port: 8080
+    description: REST adapter for International Business Machines IBM Text to Speech API — Synthesis. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/v1/synthesize
+      name: v1-synthesize
+      description: REST surface for v1-synthesize.
+      operations:
+      - method: POST
+        name: synthesize
+        description: International Business Machines Synthesize audio
+        call: ibm-text-to-speech-synthesis.synthesize
+        with:
+          Accept: rest.Accept
+          voice: rest.voice
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ibm-text-to-speech-synthesis-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for International Business Machines IBM Text to Speech API — Synthesis. One tool per consumed
+      operation, routed inline through this capability's consumes block.
+    tools:
+    - name: international-business-machines-synthesize-audio
+      description: International Business Machines Synthesize audio
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ibm-text-to-speech-synthesis.synthesize
+      with:
+        Accept: tools.Accept
+        voice: tools.voice
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

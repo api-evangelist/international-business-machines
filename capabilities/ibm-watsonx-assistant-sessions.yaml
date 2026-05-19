@@ -1,0 +1,140 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: International Business Machines IBM watsonx Assistant v2 API — Sessions
+  description: 'International Business Machines IBM watsonx Assistant v2 API — Sessions. 2 operations. Lead operation: International
+    Business Machines Create a session. Self-contained Naftiko capability covering one International Business Machines business
+    surface.'
+  tags:
+  - International Business Machines
+  - Sessions
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    INTERNATIONAL_BUSINESS_MACHINES_API_KEY: INTERNATIONAL_BUSINESS_MACHINES_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ibm-watsonx-assistant-sessions
+    baseUri: https://api.us-south.assistant.watson.cloud.ibm.com
+    description: International Business Machines IBM watsonx Assistant v2 API — Sessions business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: v2-assistants-assistant_id-sessions
+      path: /v2/assistants/{assistant_id}/sessions
+      operations:
+      - name: createsession
+        method: POST
+        description: International Business Machines Create a session
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assistant_id
+          in: path
+          type: string
+          required: true
+        - name: version
+          in: query
+          type: string
+          required: true
+    - name: v2-assistants-assistant_id-sessions-session_id
+      path: /v2/assistants/{assistant_id}/sessions/{session_id}
+      operations:
+      - name: deletesession
+        method: DELETE
+        description: International Business Machines Delete a session
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assistant_id
+          in: path
+          type: string
+          required: true
+        - name: session_id
+          in: path
+          type: string
+          required: true
+        - name: version
+          in: query
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.INTERNATIONAL_BUSINESS_MACHINES_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ibm-watsonx-assistant-sessions-rest
+    port: 8080
+    description: REST adapter for International Business Machines IBM watsonx Assistant v2 API — Sessions. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/v2/assistants/{assistant-id}/sessions
+      name: v2-assistants-assistant-id-sessions
+      description: REST surface for v2-assistants-assistant_id-sessions.
+      operations:
+      - method: POST
+        name: createsession
+        description: International Business Machines Create a session
+        call: ibm-watsonx-assistant-sessions.createsession
+        with:
+          assistant_id: rest.assistant_id
+          version: rest.version
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/assistants/{assistant-id}/sessions/{session-id}
+      name: v2-assistants-assistant-id-sessions-session-id
+      description: REST surface for v2-assistants-assistant_id-sessions-session_id.
+      operations:
+      - method: DELETE
+        name: deletesession
+        description: International Business Machines Delete a session
+        call: ibm-watsonx-assistant-sessions.deletesession
+        with:
+          assistant_id: rest.assistant_id
+          session_id: rest.session_id
+          version: rest.version
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ibm-watsonx-assistant-sessions-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for International Business Machines IBM watsonx Assistant v2 API — Sessions. One tool per consumed
+      operation, routed inline through this capability's consumes block.
+    tools:
+    - name: international-business-machines-create-session
+      description: International Business Machines Create a session
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ibm-watsonx-assistant-sessions.createsession
+      with:
+        assistant_id: tools.assistant_id
+        version: tools.version
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: international-business-machines-delete-session
+      description: International Business Machines Delete a session
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ibm-watsonx-assistant-sessions.deletesession
+      with:
+        assistant_id: tools.assistant_id
+        session_id: tools.session_id
+        version: tools.version
+      outputParameters:
+      - type: object
+        mapping: $.

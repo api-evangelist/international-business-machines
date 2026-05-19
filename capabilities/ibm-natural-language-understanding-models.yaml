@@ -1,0 +1,122 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: International Business Machines IBM Natural Language Understanding API — Models
+  description: 'International Business Machines IBM Natural Language Understanding API — Models. 2 operations. Lead operation:
+    International Business Machines List categories models. Self-contained Naftiko capability covering one International Business
+    Machines business surface.'
+  tags:
+  - International Business Machines
+  - Models
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    INTERNATIONAL_BUSINESS_MACHINES_API_KEY: INTERNATIONAL_BUSINESS_MACHINES_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ibm-natural-language-understanding-models
+    baseUri: https://api.us-south.natural-language-understanding.watson.cloud.ibm.com
+    description: International Business Machines IBM Natural Language Understanding API — Models business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: v1-models-categories
+      path: /v1/models/categories
+      operations:
+      - name: listcategoriesmodels
+        method: GET
+        description: International Business Machines List categories models
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: version
+          in: query
+          type: string
+          required: true
+    - name: v1-models-sentiment
+      path: /v1/models/sentiment
+      operations:
+      - name: listsentimentmodels
+        method: GET
+        description: International Business Machines List sentiment models
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: version
+          in: query
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.INTERNATIONAL_BUSINESS_MACHINES_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ibm-natural-language-understanding-models-rest
+    port: 8080
+    description: REST adapter for International Business Machines IBM Natural Language Understanding API — Models. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/v1/models/categories
+      name: v1-models-categories
+      description: REST surface for v1-models-categories.
+      operations:
+      - method: GET
+        name: listcategoriesmodels
+        description: International Business Machines List categories models
+        call: ibm-natural-language-understanding-models.listcategoriesmodels
+        with:
+          version: rest.version
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/models/sentiment
+      name: v1-models-sentiment
+      description: REST surface for v1-models-sentiment.
+      operations:
+      - method: GET
+        name: listsentimentmodels
+        description: International Business Machines List sentiment models
+        call: ibm-natural-language-understanding-models.listsentimentmodels
+        with:
+          version: rest.version
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ibm-natural-language-understanding-models-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for International Business Machines IBM Natural Language Understanding API — Models. One tool
+      per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: international-business-machines-list-categories
+      description: International Business Machines List categories models
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ibm-natural-language-understanding-models.listcategoriesmodels
+      with:
+        version: tools.version
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: international-business-machines-list-sentiment
+      description: International Business Machines List sentiment models
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ibm-natural-language-understanding-models.listsentimentmodels
+      with:
+        version: tools.version
+      outputParameters:
+      - type: object
+        mapping: $.

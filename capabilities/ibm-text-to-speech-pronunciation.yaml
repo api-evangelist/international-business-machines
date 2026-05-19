@@ -1,0 +1,91 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: International Business Machines IBM Text to Speech API — Pronunciation
+  description: 'International Business Machines IBM Text to Speech API — Pronunciation. 1 operations. Lead operation: International
+    Business Machines Get pronunciation. Self-contained Naftiko capability covering one International Business Machines business
+    surface.'
+  tags:
+  - International Business Machines
+  - Pronunciation
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    INTERNATIONAL_BUSINESS_MACHINES_API_KEY: INTERNATIONAL_BUSINESS_MACHINES_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ibm-text-to-speech-pronunciation
+    baseUri: https://api.us-south.text-to-speech.watson.cloud.ibm.com
+    description: International Business Machines IBM Text to Speech API — Pronunciation business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: v1-pronunciation
+      path: /v1/pronunciation
+      operations:
+      - name: getpronunciation
+        method: GET
+        description: International Business Machines Get pronunciation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: text
+          in: query
+          type: string
+          required: true
+        - name: voice
+          in: query
+          type: string
+        - name: format
+          in: query
+          type: string
+    authentication:
+      type: bearer
+      token: '{{env.INTERNATIONAL_BUSINESS_MACHINES_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ibm-text-to-speech-pronunciation-rest
+    port: 8080
+    description: REST adapter for International Business Machines IBM Text to Speech API — Pronunciation. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/v1/pronunciation
+      name: v1-pronunciation
+      description: REST surface for v1-pronunciation.
+      operations:
+      - method: GET
+        name: getpronunciation
+        description: International Business Machines Get pronunciation
+        call: ibm-text-to-speech-pronunciation.getpronunciation
+        with:
+          text: rest.text
+          voice: rest.voice
+          format: rest.format
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ibm-text-to-speech-pronunciation-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for International Business Machines IBM Text to Speech API — Pronunciation. One tool per consumed
+      operation, routed inline through this capability's consumes block.
+    tools:
+    - name: international-business-machines-get-pronunciation
+      description: International Business Machines Get pronunciation
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ibm-text-to-speech-pronunciation.getpronunciation
+      with:
+        text: tools.text
+        voice: tools.voice
+        format: tools.format
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,88 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: International Business Machines IBM watsonx.ai API — Embeddings
+  description: 'International Business Machines IBM watsonx.ai API — Embeddings. 1 operations. Lead operation: International
+    Business Machines Generate embeddings. Self-contained Naftiko capability covering one International Business Machines
+    business surface.'
+  tags:
+  - International Business Machines
+  - Embeddings
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    INTERNATIONAL_BUSINESS_MACHINES_API_KEY: INTERNATIONAL_BUSINESS_MACHINES_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ibm-watsonx-ai-embeddings
+    baseUri: https://us-south.ml.cloud.ibm.com
+    description: International Business Machines IBM watsonx.ai API — Embeddings business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: ml-v1-text-embeddings
+      path: /ml/v1/text/embeddings
+      operations:
+      - name: textembeddings
+        method: POST
+        description: International Business Machines Generate embeddings
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: version
+          in: query
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.INTERNATIONAL_BUSINESS_MACHINES_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ibm-watsonx-ai-embeddings-rest
+    port: 8080
+    description: REST adapter for International Business Machines IBM watsonx.ai API — Embeddings. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/ml/v1/text/embeddings
+      name: ml-v1-text-embeddings
+      description: REST surface for ml-v1-text-embeddings.
+      operations:
+      - method: POST
+        name: textembeddings
+        description: International Business Machines Generate embeddings
+        call: ibm-watsonx-ai-embeddings.textembeddings
+        with:
+          version: rest.version
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ibm-watsonx-ai-embeddings-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for International Business Machines IBM watsonx.ai API — Embeddings. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: international-business-machines-generate-embeddings
+      description: International Business Machines Generate embeddings
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ibm-watsonx-ai-embeddings.textembeddings
+      with:
+        version: tools.version
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

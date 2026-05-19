@@ -1,0 +1,87 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: International Business Machines IBM watsonx Assistant v2 API — Environments
+  description: 'International Business Machines IBM watsonx Assistant v2 API — Environments. 1 operations. Lead operation:
+    International Business Machines List environments. Self-contained Naftiko capability covering one International Business
+    Machines business surface.'
+  tags:
+  - International Business Machines
+  - Environments
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    INTERNATIONAL_BUSINESS_MACHINES_API_KEY: INTERNATIONAL_BUSINESS_MACHINES_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ibm-watsonx-assistant-environments
+    baseUri: https://api.us-south.assistant.watson.cloud.ibm.com
+    description: International Business Machines IBM watsonx Assistant v2 API — Environments business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: v2-assistants-assistant_id-environments
+      path: /v2/assistants/{assistant_id}/environments
+      operations:
+      - name: listenvironments
+        method: GET
+        description: International Business Machines List environments
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assistant_id
+          in: path
+          type: string
+          required: true
+        - name: version
+          in: query
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.INTERNATIONAL_BUSINESS_MACHINES_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ibm-watsonx-assistant-environments-rest
+    port: 8080
+    description: REST adapter for International Business Machines IBM watsonx Assistant v2 API — Environments. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/v2/assistants/{assistant-id}/environments
+      name: v2-assistants-assistant-id-environments
+      description: REST surface for v2-assistants-assistant_id-environments.
+      operations:
+      - method: GET
+        name: listenvironments
+        description: International Business Machines List environments
+        call: ibm-watsonx-assistant-environments.listenvironments
+        with:
+          assistant_id: rest.assistant_id
+          version: rest.version
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ibm-watsonx-assistant-environments-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for International Business Machines IBM watsonx Assistant v2 API — Environments. One tool per
+      consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: international-business-machines-list-environments
+      description: International Business Machines List environments
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ibm-watsonx-assistant-environments.listenvironments
+      with:
+        assistant_id: tools.assistant_id
+        version: tools.version
+      outputParameters:
+      - type: object
+        mapping: $.

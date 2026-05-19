@@ -1,0 +1,132 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: International Business Machines IBM Cloud VPC API — VPCs
+  description: 'International Business Machines IBM Cloud VPC API — VPCs. 2 operations. Lead operation: International Business
+    Machines List VPCs. Self-contained Naftiko capability covering one International Business Machines business surface.'
+  tags:
+  - International Business Machines
+  - VPCs
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    INTERNATIONAL_BUSINESS_MACHINES_API_KEY: INTERNATIONAL_BUSINESS_MACHINES_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ibm-vpc-vpcs
+    baseUri: https://us-south.iaas.cloud.ibm.com
+    description: International Business Machines IBM Cloud VPC API — VPCs business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-vpcs
+      path: /v1/vpcs
+      operations:
+      - name: listvpcs
+        method: GET
+        description: International Business Machines List VPCs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: version
+          in: query
+          type: string
+          required: true
+        - name: generation
+          in: query
+          type: integer
+          required: true
+      - name: createvpc
+        method: POST
+        description: International Business Machines Create a VPC
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: version
+          in: query
+          type: string
+          required: true
+        - name: generation
+          in: query
+          type: integer
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.INTERNATIONAL_BUSINESS_MACHINES_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ibm-vpc-vpcs-rest
+    port: 8080
+    description: REST adapter for International Business Machines IBM Cloud VPC API — VPCs. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/v1/vpcs
+      name: v1-vpcs
+      description: REST surface for v1-vpcs.
+      operations:
+      - method: GET
+        name: listvpcs
+        description: International Business Machines List VPCs
+        call: ibm-vpc-vpcs.listvpcs
+        with:
+          version: rest.version
+          generation: rest.generation
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createvpc
+        description: International Business Machines Create a VPC
+        call: ibm-vpc-vpcs.createvpc
+        with:
+          version: rest.version
+          generation: rest.generation
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ibm-vpc-vpcs-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for International Business Machines IBM Cloud VPC API — VPCs. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: international-business-machines-list-vpcs
+      description: International Business Machines List VPCs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ibm-vpc-vpcs.listvpcs
+      with:
+        version: tools.version
+        generation: tools.generation
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: international-business-machines-create-vpc
+      description: International Business Machines Create a VPC
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ibm-vpc-vpcs.createvpc
+      with:
+        version: tools.version
+        generation: tools.generation
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
