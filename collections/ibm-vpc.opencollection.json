@@ -1,0 +1,225 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "International Business Machines IBM Cloud VPC API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "VPCs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines List VPCs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us-south.iaas.cloud.ibm.com/v1/vpcs",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "generation",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List all VPCs in the region."
+        },
+        {
+          "info": {
+            "name": "International Business Machines Create a VPC",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://us-south.iaas.cloud.ibm.com/v1/vpcs",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "generation",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new VPC."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Instances",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines List instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us-south.iaas.cloud.ibm.com/v1/instances",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "generation",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List all virtual server instances in the region."
+        },
+        {
+          "info": {
+            "name": "International Business Machines Create an instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://us-south.iaas.cloud.ibm.com/v1/instances",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "generation",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new virtual server instance."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Subnets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines List subnets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us-south.iaas.cloud.ibm.com/v1/subnets",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "generation",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List all subnets in the region."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Security Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines List security groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us-south.iaas.cloud.ibm.com/v1/security_groups",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "generation",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List all security groups in the region."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Volumes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines List volumes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us-south.iaas.cloud.ibm.com/v1/volumes",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "generation",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List all block storage volumes in the region."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

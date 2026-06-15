@@ -1,0 +1,753 @@
+{
+  "item": [
+    {
+      "id": "dfaf2f77-06cf-4414-89a6-3358234dc4b0",
+      "name": "Embeddings",
+      "description": {
+        "content": "Generate text embeddings.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4ac2ff47-4b15-4ed1-b99f-0b87315c66f4",
+          "name": "International Business Machines Generate embeddings",
+          "request": {
+            "name": "International Business Machines Generate embeddings",
+            "description": {
+              "content": "Generate embeddings from text input for use in downstream tasks such as search and retrieval.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ml",
+                "v1",
+                "text",
+                "embeddings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model_id\": \"<string>\",\n  \"inputs\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"project_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7dfed910-0cdc-4e43-815f-9331c7de5169",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ml",
+                    "v1",
+                    "text",
+                    "embeddings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model_id\": \"<string>\",\n  \"inputs\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"project_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"model_id\": \"string\",\n  \"results\": [\n    {\n      \"embedding\": [\n        232.39538353034828,\n        1756.2999119367505\n      ],\n      \"input_token_count\": 4648\n    },\n    {\n      \"embedding\": [\n        9481.695171392532,\n        9369.843397270497\n      ],\n      \"input_token_count\": 5957\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "82f3b803-b517-4672-839c-0f173623b0c6",
+      "name": "Models",
+      "description": {
+        "content": "Retrieve available foundation model information.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d1669b8b-abfd-4ff3-af8c-3f879c0ef6c7",
+          "name": "International Business Machines List foundation models",
+          "request": {
+            "name": "International Business Machines List foundation models",
+            "description": {
+              "content": "Retrieve the list of available foundation models.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ml",
+                "v1",
+                "foundation_model_specs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1af32b2a-b2d5-484b-a51c-99f1c0c95bb7",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ml",
+                    "v1",
+                    "foundation_model_specs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_count\": 2543,\n  \"limit\": 7907,\n  \"offset\": 1286,\n  \"resources\": [\n    {\n      \"model_id\": \"string\",\n      \"label\": \"string\",\n      \"provider\": \"string\",\n      \"source\": \"string\",\n      \"tasks\": [\n        {\n          \"id\": \"string\",\n          \"label\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"label\": \"string\"\n        }\n      ]\n    },\n    {\n      \"model_id\": \"string\",\n      \"label\": \"string\",\n      \"provider\": \"string\",\n      \"source\": \"string\",\n      \"tasks\": [\n        {\n          \"id\": \"string\",\n          \"label\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"label\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "99751c56-61fb-4eb2-aa92-616b85492ff5",
+      "name": "Text Generation",
+      "description": {
+        "content": "Generate text using foundation models.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2ca0f268-b35f-4692-a25b-b3b140c18cad",
+          "name": "International Business Machines Generate text",
+          "request": {
+            "name": "International Business Machines Generate text",
+            "description": {
+              "content": "Infer the next tokens for a given deployed model with a set of parameters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ml",
+                "v1",
+                "text",
+                "generation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "<string>",
+                  "description": "(Required) The API version date."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model_id\": \"<string>\",\n  \"input\": \"<string>\",\n  \"project_id\": \"<string>\",\n  \"parameters\": {\n    \"max_new_tokens\": \"<integer>\",\n    \"temperature\": \"<number>\",\n    \"top_p\": \"<number>\",\n    \"top_k\": \"<integer>\",\n    \"repetition_penalty\": \"<number>\",\n    \"stop_sequences\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "331cfe0f-178d-488a-b6a6-c87ac6dd76d6",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ml",
+                    "v1",
+                    "text",
+                    "generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model_id\": \"<string>\",\n  \"input\": \"<string>\",\n  \"project_id\": \"<string>\",\n  \"parameters\": {\n    \"max_new_tokens\": \"<integer>\",\n    \"temperature\": \"<number>\",\n    \"top_p\": \"<number>\",\n    \"top_k\": \"<integer>\",\n    \"repetition_penalty\": \"<number>\",\n    \"stop_sequences\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"model_id\": \"string\",\n  \"created_at\": \"string\",\n  \"results\": [\n    {\n      \"generated_text\": \"string\",\n      \"generated_token_count\": 4065,\n      \"input_token_count\": 7596,\n      \"stop_reason\": \"string\"\n    },\n    {\n      \"generated_text\": \"string\",\n      \"generated_token_count\": 7340,\n      \"input_token_count\": 615,\n      \"stop_reason\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9b98f89c-18e9-46b2-ac7e-c06f28eeaf8b",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ml",
+                    "v1",
+                    "text",
+                    "generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model_id\": \"<string>\",\n  \"input\": \"<string>\",\n  \"project_id\": \"<string>\",\n  \"parameters\": {\n    \"max_new_tokens\": \"<integer>\",\n    \"temperature\": \"<number>\",\n    \"top_p\": \"<number>\",\n    \"top_k\": \"<integer>\",\n    \"repetition_penalty\": \"<number>\",\n    \"stop_sequences\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8d6ea7c0-3950-4f52-acfd-332ed322d131",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ml",
+                    "v1",
+                    "text",
+                    "generation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model_id\": \"<string>\",\n  \"input\": \"<string>\",\n  \"project_id\": \"<string>\",\n  \"parameters\": {\n    \"max_new_tokens\": \"<integer>\",\n    \"temperature\": \"<number>\",\n    \"top_p\": \"<number>\",\n    \"top_k\": \"<integer>\",\n    \"repetition_penalty\": \"<number>\",\n    \"stop_sequences\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b607e4c7-e3ae-4da8-9b44-ac1072a92006",
+          "name": "International Business Machines Generate text (streaming)",
+          "request": {
+            "name": "International Business Machines Generate text (streaming)",
+            "description": {
+              "content": "Infer the next tokens for a given deployed model with a set of parameters, returning results as a stream.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ml",
+                "v1",
+                "text",
+                "generation_stream"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/event-stream"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model_id\": \"<string>\",\n  \"input\": \"<string>\",\n  \"project_id\": \"<string>\",\n  \"parameters\": {\n    \"max_new_tokens\": \"<integer>\",\n    \"temperature\": \"<number>\",\n    \"top_p\": \"<number>\",\n    \"top_k\": \"<integer>\",\n    \"repetition_penalty\": \"<number>\",\n    \"stop_sequences\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9174c271-f30e-406f-b36c-b443e97bb544",
+              "name": "Successful streaming response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ml",
+                    "v1",
+                    "text",
+                    "generation_stream"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/event-stream"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model_id\": \"<string>\",\n  \"input\": \"<string>\",\n  \"project_id\": \"<string>\",\n  \"parameters\": {\n    \"max_new_tokens\": \"<integer>\",\n    \"temperature\": \"<number>\",\n    \"top_p\": \"<number>\",\n    \"top_k\": \"<integer>\",\n    \"repetition_penalty\": \"<number>\",\n    \"stop_sequences\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/event-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "be32f0aa-0638-431f-9392-66ad1ea6d479",
+          "name": "International Business Machines Tokenize text",
+          "request": {
+            "name": "International Business Machines Tokenize text",
+            "description": {
+              "content": "Return the tokens for the provided text with the given model.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ml",
+                "v1",
+                "text",
+                "tokenization"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model_id\": \"<string>\",\n  \"input\": \"<string>\",\n  \"project_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0201cc57-c6dc-4bb9-998e-ed639bd9c0cf",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ml",
+                    "v1",
+                    "text",
+                    "tokenization"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model_id\": \"<string>\",\n  \"input\": \"<string>\",\n  \"project_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"model_id\": \"string\",\n  \"result\": {\n    \"token_count\": 6202,\n    \"tokens\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://us-south.ml.cloud.ibm.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3f351f1c-59be-4ee3-8d7a-95f9b4bc2fbe",
+    "name": "International Business Machines IBM watsonx.ai API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The IBM watsonx.ai API enables developers to run text inference, prompt tuning, and other operations on Large Language Models (LLMs). It provides access to multiple open source and IBM foundation models through a unified REST interface for text generation, embeddings, and model management.\n\nContact Support:\n Name: IBM Cloud",
+      "type": "text/plain"
+    }
+  }
+}

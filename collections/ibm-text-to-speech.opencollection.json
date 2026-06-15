@@ -1,0 +1,125 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "International Business Machines IBM Text to Speech API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Synthesis",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines Synthesize audio",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.us-south.text-to-speech.watson.cloud.ibm.com/v1/synthesize",
+            "headers": [
+              {
+                "name": "Accept",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "voice",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Synthesize text to audio. Returns the audio in the specified format."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Voices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines List voices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.us-south.text-to-speech.watson.cloud.ibm.com/v1/voices"
+          },
+          "docs": "List all available voices."
+        },
+        {
+          "info": {
+            "name": "International Business Machines Get a voice",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.us-south.text-to-speech.watson.cloud.ibm.com/v1/voices/:voice",
+            "params": [
+              {
+                "name": "voice",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get information about a specific voice."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Pronunciation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines Get pronunciation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.us-south.text-to-speech.watson.cloud.ibm.com/v1/pronunciation",
+            "params": [
+              {
+                "name": "text",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "voice",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get the phonetic pronunciation of a word."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

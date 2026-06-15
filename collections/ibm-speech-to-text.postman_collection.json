@@ -1,0 +1,511 @@
+{
+  "item": [
+    {
+      "id": "8919568a-b53c-40fe-a87d-17b87bb74914",
+      "name": "Custom Language Models",
+      "description": {
+        "content": "Create and manage custom language models.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "62d7e55f-8d61-4149-a388-880ab6b1f6f0",
+          "name": "International Business Machines List custom language models",
+          "request": {
+            "name": "International Business Machines List custom language models",
+            "description": {
+              "content": "List all custom language models.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "customizations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d2836aa4-d7b8-434b-b4f8-3e5996374251",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "customizations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1f8e7082-f868-43f9-9aaa-cc3d2e4ac199",
+          "name": "International Business Machines Create a custom language model",
+          "request": {
+            "name": "International Business Machines Create a custom language model",
+            "description": {
+              "content": "Create a new custom language model for a specified base model.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "customizations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"base_model_name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1a96c700-8714-4c8f-b54d-3336242070e5",
+              "name": "Custom model created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "customizations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"base_model_name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "3c60c0c0-0c46-445e-88da-af75b58c8347",
+      "name": "Models",
+      "description": {
+        "content": "Manage speech recognition models.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c3e17deb-22da-42c8-be47-f71826efd8dd",
+          "name": "International Business Machines List models",
+          "request": {
+            "name": "International Business Machines List models",
+            "description": {
+              "content": "List all available language models.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "models"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4d3b747f-df65-4cb8-8827-f93a34b527da",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "models"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"models\": [\n    {\n      \"name\": \"string\",\n      \"language\": \"string\",\n      \"rate\": 4175,\n      \"url\": \"string\",\n      \"description\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"language\": \"string\",\n      \"rate\": 5122,\n      \"url\": \"string\",\n      \"description\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e7d42277-c95e-4300-9bba-a62047770138",
+          "name": "International Business Machines Get a model",
+          "request": {
+            "name": "International Business Machines Get a model",
+            "description": {
+              "content": "Get information about a specific language model.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "models",
+                ":model_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "model_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fe8b2cec-1de2-40ec-82e7-14b81747c987",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "models",
+                    ":model_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "model_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"language\": \"string\",\n  \"rate\": 9847,\n  \"url\": \"string\",\n  \"description\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "32d8c1f2-fe8e-4312-8e33-83befc1e5cb0",
+      "name": "Recognition",
+      "description": {
+        "content": "Recognize and transcribe audio.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4d4ff328-11fe-4137-b3fc-3dbe139f1964",
+          "name": "International Business Machines Recognize audio",
+          "request": {
+            "name": "International Business Machines Recognize audio",
+            "description": {
+              "content": "Send audio and receive a transcription of the audio content.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "recognize"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "model",
+                  "value": "<string>",
+                  "description": "The model to use for recognition."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "audio/flac"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "file"
+            }
+          },
+          "response": [
+            {
+              "id": "75abc0fd-3819-4987-ba33-21ba28bfc94a",
+              "name": "Successful transcription",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "recognize"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "model",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "content-type",
+                    "value": "string"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "file"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"final\": true,\n      \"alternatives\": [\n        {\n          \"transcript\": \"string\",\n          \"confidence\": 785.2528440277406\n        },\n        {\n          \"transcript\": \"string\",\n          \"confidence\": 4505.417374003432\n        }\n      ]\n    },\n    {\n      \"final\": true,\n      \"alternatives\": [\n        {\n          \"transcript\": \"string\",\n          \"confidence\": 6109.126298576776\n        },\n        {\n          \"transcript\": \"string\",\n          \"confidence\": 7190.908063127102\n        }\n      ]\n    }\n  ],\n  \"result_index\": 9514,\n  \"speaker_labels\": [\n    {\n      \"from\": 4004.13604143616,\n      \"to\": 1687.2566737092043,\n      \"speaker\": 1958,\n      \"confidence\": 8969.295362549112\n    },\n    {\n      \"from\": 4044.5302039347175,\n      \"to\": 7301.6298806299155,\n      \"speaker\": 8980,\n      \"confidence\": 1806.6289721123574\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.us-south.speech-to-text.watson.cloud.ibm.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e3ffe387-b155-4002-8fee-ffe8067e61f9",
+    "name": "International Business Machines IBM Speech to Text API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The IBM Speech to Text API provides speech-recognition capabilities to produce transcripts of spoken audio. It supports multiple languages and audio formats, and offers features such as speaker labels, keyword spotting, smart formatting, and custom language and acoustic models.\n\nContact Support:\n Name: IBM Cloud",
+      "type": "text/plain"
+    }
+  }
+}

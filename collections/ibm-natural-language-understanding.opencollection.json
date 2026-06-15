@@ -1,0 +1,90 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "International Business Machines IBM Natural Language Understanding API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Analyze",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines Analyze text",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.us-south.natural-language-understanding.watson.cloud.ibm.com/v1/analyze",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Analyze text, HTML, or a public URL with one or more text analytics features."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Models",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines List sentiment models",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.us-south.natural-language-understanding.watson.cloud.ibm.com/v1/models/sentiment",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List available custom sentiment models."
+        },
+        {
+          "info": {
+            "name": "International Business Machines List categories models",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.us-south.natural-language-understanding.watson.cloud.ibm.com/v1/models/categories",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List available custom categories models."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

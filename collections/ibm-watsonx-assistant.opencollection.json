@@ -1,0 +1,173 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "International Business Machines IBM watsonx Assistant v2 API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sessions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines Create a session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.us-south.assistant.watson.cloud.ibm.com/v2/assistants/:assistant_id/sessions",
+            "params": [
+              {
+                "name": "assistant_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Create a new session for an assistant. A session is used to send user input to an assistant and receive responses."
+        },
+        {
+          "info": {
+            "name": "International Business Machines Delete a session",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.us-south.assistant.watson.cloud.ibm.com/v2/assistants/:assistant_id/sessions/:session_id",
+            "params": [
+              {
+                "name": "assistant_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "session_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Delete an existing session."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Messages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines Send user input to assistant",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.us-south.assistant.watson.cloud.ibm.com/v2/assistants/:assistant_id/sessions/:session_id/message",
+            "params": [
+              {
+                "name": "assistant_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "session_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send user input to an assistant and receive a response within the context of a session."
+        },
+        {
+          "info": {
+            "name": "International Business Machines Send user input to assistant (stateless)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.us-south.assistant.watson.cloud.ibm.com/v2/assistants/:assistant_id/message",
+            "params": [
+              {
+                "name": "assistant_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send user input to an assistant without maintaining a session."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Environments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines List environments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.us-south.assistant.watson.cloud.ibm.com/v2/assistants/:assistant_id/environments",
+            "params": [
+              {
+                "name": "assistant_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List the environments associated with an assistant."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

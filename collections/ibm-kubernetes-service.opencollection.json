@@ -1,0 +1,138 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "International Business Machines IBM Cloud Kubernetes Service API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Clusters",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines List clusters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://containers.cloud.ibm.com/v2/getClusters"
+          },
+          "docs": "List all Kubernetes and OpenShift clusters in the account."
+        },
+        {
+          "info": {
+            "name": "International Business Machines Get a cluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://containers.cloud.ibm.com/v2/getCluster",
+            "params": [
+              {
+                "name": "cluster",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get details about a specific cluster."
+        },
+        {
+          "info": {
+            "name": "International Business Machines Create a cluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://containers.cloud.ibm.com/v2/createCluster",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new Kubernetes or OpenShift cluster."
+        },
+        {
+          "info": {
+            "name": "International Business Machines Delete a cluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://containers.cloud.ibm.com/v2/removeCluster",
+            "params": [
+              {
+                "name": "cluster",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Delete a cluster and its associated worker nodes."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Worker Nodes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines List worker nodes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://containers.cloud.ibm.com/v2/getWorkers",
+            "params": [
+              {
+                "name": "cluster",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List all worker nodes in a cluster."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Worker Pools",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines List worker pools",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://containers.cloud.ibm.com/v2/getWorkerPools",
+            "params": [
+              {
+                "name": "cluster",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List all worker pools in a cluster."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

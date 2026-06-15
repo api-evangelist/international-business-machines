@@ -1,0 +1,584 @@
+{
+  "item": [
+    {
+      "id": "660b68ce-52de-488d-812b-94d7ce5d2737",
+      "name": "Clusters",
+      "description": {
+        "content": "Manage Kubernetes clusters.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "72917927-11d2-4aeb-b317-3bc2de2d7ab0",
+          "name": "International Business Machines List clusters",
+          "request": {
+            "name": "International Business Machines List clusters",
+            "description": {
+              "content": "List all Kubernetes and OpenShift clusters in the account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "getClusters"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dc36f6ed-047b-4c27-a815-4cebb048508a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "getClusters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"state\": \"string\",\n    \"location\": \"string\",\n    \"region\": \"string\",\n    \"masterKubeVersion\": \"string\",\n    \"workerCount\": 733,\n    \"resourceGroup\": \"string\",\n    \"provider\": \"string\",\n    \"type\": \"string\",\n    \"createdDate\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"state\": \"string\",\n    \"location\": \"string\",\n    \"region\": \"string\",\n    \"masterKubeVersion\": \"string\",\n    \"workerCount\": 8510,\n    \"resourceGroup\": \"string\",\n    \"provider\": \"string\",\n    \"type\": \"string\",\n    \"createdDate\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c5f43eeb-ebb1-4653-aab3-086baae5d8b9",
+          "name": "International Business Machines Get a cluster",
+          "request": {
+            "name": "International Business Machines Get a cluster",
+            "description": {
+              "content": "Get details about a specific cluster.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "getCluster"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cluster",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "397e8c4f-9e3f-4a17-9fc6-47b932d6c2f7",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "getCluster"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cluster",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"state\": \"string\",\n  \"location\": \"string\",\n  \"region\": \"string\",\n  \"masterKubeVersion\": \"string\",\n  \"workerCount\": 835,\n  \"resourceGroup\": \"string\",\n  \"provider\": \"string\",\n  \"type\": \"string\",\n  \"createdDate\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1e2a3c46-a608-4a48-9a46-3f2e127d0995",
+          "name": "International Business Machines Create a cluster",
+          "request": {
+            "name": "International Business Machines Create a cluster",
+            "description": {
+              "content": "Create a new Kubernetes or OpenShift cluster.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "createCluster"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"provider\": \"<string>\",\n  \"kubeVersion\": \"<string>\",\n  \"workerPool\": {\n    \"name\": \"<string>\",\n    \"flavor\": \"<string>\",\n    \"workerCount\": \"<integer>\",\n    \"vpcID\": \"<string>\",\n    \"zones\": [\n      {\n        \"id\": \"<string>\",\n        \"subnetID\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\",\n        \"subnetID\": \"<string>\"\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e71985ff-c9a0-4f11-b487-a2b1e501313e",
+              "name": "Cluster created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "createCluster"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"provider\": \"<string>\",\n  \"kubeVersion\": \"<string>\",\n  \"workerPool\": {\n    \"name\": \"<string>\",\n    \"flavor\": \"<string>\",\n    \"workerCount\": \"<integer>\",\n    \"vpcID\": \"<string>\",\n    \"zones\": [\n      {\n        \"id\": \"<string>\",\n        \"subnetID\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\",\n        \"subnetID\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f01f1a89-4472-47d6-8fc9-b31d8428229a",
+          "name": "International Business Machines Delete a cluster",
+          "request": {
+            "name": "International Business Machines Delete a cluster",
+            "description": {
+              "content": "Delete a cluster and its associated worker nodes.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "removeCluster"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cluster",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e0d33126-955d-4604-9460-6278d46c0eac",
+              "name": "Cluster deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "removeCluster"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cluster",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "a9c1248f-fcf0-4613-bace-bddd5ef870b9",
+      "name": "Worker Nodes",
+      "description": {
+        "content": "Manage worker nodes.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "879cbc27-75aa-4f51-a829-e4434aa449bf",
+          "name": "International Business Machines List worker nodes",
+          "request": {
+            "name": "International Business Machines List worker nodes",
+            "description": {
+              "content": "List all worker nodes in a cluster.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "getWorkers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cluster",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a4a75d1d-7ab8-48d3-9a89-55a7038269df",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "getWorkers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cluster",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"state\": \"string\",\n    \"status\": \"string\",\n    \"privateIP\": \"string\",\n    \"publicIP\": \"string\",\n    \"machineType\": \"string\",\n    \"kubeVersion\": \"string\",\n    \"poolID\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"state\": \"string\",\n    \"status\": \"string\",\n    \"privateIP\": \"string\",\n    \"publicIP\": \"string\",\n    \"machineType\": \"string\",\n    \"kubeVersion\": \"string\",\n    \"poolID\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "d5ce1afc-26f4-409a-9b84-678566fcb8d1",
+      "name": "Worker Pools",
+      "description": {
+        "content": "Manage worker pools.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b8045553-a608-44a8-bd23-9b316d4455f8",
+          "name": "International Business Machines List worker pools",
+          "request": {
+            "name": "International Business Machines List worker pools",
+            "description": {
+              "content": "List all worker pools in a cluster.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "getWorkerPools"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cluster",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dca29d71-047a-4cf2-aab2-f315030f3f77",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "getWorkerPools"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cluster",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://containers.cloud.ibm.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "466c8b07-6bb8-4495-8884-bd798685b83f",
+    "name": "International Business Machines IBM Cloud Kubernetes Service API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The IBM Cloud Kubernetes Service API enables you to create and manage Kubernetes clusters and worker nodes on IBM Cloud. It supports both community Kubernetes and Red Hat OpenShift clusters with integrated logging, monitoring, and security capabilities.\n\nContact Support:\n Name: IBM Cloud",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "International Business Machines IBM Speech to Text API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Recognition",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines Recognize audio",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.us-south.speech-to-text.watson.cloud.ibm.com/v1/recognize",
+            "headers": [
+              {
+                "name": "content-type",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "model",
+                "value": "",
+                "type": "query",
+                "description": "The model to use for recognition."
+              }
+            ]
+          },
+          "docs": "Send audio and receive a transcription of the audio content."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Models",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines List models",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.us-south.speech-to-text.watson.cloud.ibm.com/v1/models"
+          },
+          "docs": "List all available language models."
+        },
+        {
+          "info": {
+            "name": "International Business Machines Get a model",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.us-south.speech-to-text.watson.cloud.ibm.com/v1/models/:model_id",
+            "params": [
+              {
+                "name": "model_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get information about a specific language model."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Custom Language Models",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines List custom language models",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.us-south.speech-to-text.watson.cloud.ibm.com/v1/customizations"
+          },
+          "docs": "List all custom language models."
+        },
+        {
+          "info": {
+            "name": "International Business Machines Create a custom language model",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.us-south.speech-to-text.watson.cloud.ibm.com/v1/customizations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new custom language model for a specified base model."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

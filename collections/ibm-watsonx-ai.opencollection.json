@@ -1,0 +1,157 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "International Business Machines IBM watsonx.ai API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Text Generation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines Generate text",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://us-south.ml.cloud.ibm.com/ml/v1/text/generation",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "query",
+                "description": "The API version date."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Infer the next tokens for a given deployed model with a set of parameters."
+        },
+        {
+          "info": {
+            "name": "International Business Machines Generate text (streaming)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://us-south.ml.cloud.ibm.com/ml/v1/text/generation_stream",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Infer the next tokens for a given deployed model with a set of parameters, returning results as a stream."
+        },
+        {
+          "info": {
+            "name": "International Business Machines Tokenize text",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://us-south.ml.cloud.ibm.com/ml/v1/text/tokenization",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Return the tokens for the provided text with the given model."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Embeddings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines Generate embeddings",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://us-south.ml.cloud.ibm.com/ml/v1/text/embeddings",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generate embeddings from text input for use in downstream tasks such as search and retrieval."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Models",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines List foundation models",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://us-south.ml.cloud.ibm.com/ml/v1/foundation_model_specs",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve the list of available foundation models."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

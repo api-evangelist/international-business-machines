@@ -1,0 +1,188 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "International Business Machines IBM Cloud Object Storage API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Buckets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines List buckets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://s3.us-south.cloud-object-storage.appdomain.cloud/",
+            "headers": [
+              {
+                "name": "ibm-service-instance-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "List all buckets in the service instance."
+        },
+        {
+          "info": {
+            "name": "International Business Machines Create a bucket",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://s3.us-south.cloud-object-storage.appdomain.cloud/:bucket",
+            "headers": [
+              {
+                "name": "ibm-service-instance-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "bucket",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create a new bucket."
+        },
+        {
+          "info": {
+            "name": "International Business Machines Delete a bucket",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://s3.us-south.cloud-object-storage.appdomain.cloud/:bucket",
+            "params": [
+              {
+                "name": "bucket",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete an empty bucket."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Objects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines List objects in a bucket",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://s3.us-south.cloud-object-storage.appdomain.cloud/:bucket",
+            "params": [
+              {
+                "name": "bucket",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "prefix",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "max-keys",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List objects stored in a bucket."
+        },
+        {
+          "info": {
+            "name": "International Business Machines Get an object",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://s3.us-south.cloud-object-storage.appdomain.cloud/:bucket/:key",
+            "params": [
+              {
+                "name": "bucket",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve an object from a bucket."
+        },
+        {
+          "info": {
+            "name": "International Business Machines Upload an object",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://s3.us-south.cloud-object-storage.appdomain.cloud/:bucket/:key",
+            "params": [
+              {
+                "name": "bucket",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Upload an object to a bucket."
+        },
+        {
+          "info": {
+            "name": "International Business Machines Delete an object",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://s3.us-south.cloud-object-storage.appdomain.cloud/:bucket/:key",
+            "params": [
+              {
+                "name": "bucket",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete an object from a bucket."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
