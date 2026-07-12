@@ -164,6 +164,12 @@ apis:
       storage volumes, load balancers, security groups, and other infrastructure resources within an isolated virtual
       network on IBM Cloud.
 common:
+  - type: VulnerabilityDisclosure
+    url: security/international-business-machines-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/international-business-machines-domain-security.yml
+  - type: Authentication
+    url: authentication/international-business-machines-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/ibm
   - url: https://cloud.ibm.com/docs

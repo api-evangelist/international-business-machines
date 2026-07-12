@@ -1,0 +1,23 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/ibm-cloud-object-storage-openapi.yml, openapi/ibm-kubernetes-service-openapi.yml,
+  openapi/ibm-natural-language-understanding-openapi.yml, openapi/ibm-speech-to-text-openapi.yml,
+  openapi/ibm-text-to-speech-openapi.yml, openapi/ibm-vpc-openapi.yml, openapi/ibm-watsonx-ai-openapi.yml,
+  openapi/ibm-watsonx-assistant-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: IAM Token
+  sources:
+  - openapi/ibm-cloud-object-storage-openapi.yml
+  - openapi/ibm-kubernetes-service-openapi.yml
+  - openapi/ibm-natural-language-understanding-openapi.yml
+  - openapi/ibm-speech-to-text-openapi.yml
+  - openapi/ibm-text-to-speech-openapi.yml
+  - openapi/ibm-vpc-openapi.yml
+  - openapi/ibm-watsonx-ai-openapi.yml
+  - openapi/ibm-watsonx-assistant-openapi.yml
