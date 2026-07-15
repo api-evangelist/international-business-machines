@@ -164,6 +164,8 @@ apis:
       storage volumes, load balancers, security groups, and other infrastructure resources within an isolated virtual
       network on IBM Cloud.
 common:
+  - type: AgenticAccess
+    url: agentic-access/international-business-machines-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/international-business-machines-vulnerability-disclosure.yml
   - type: DomainSecurity
