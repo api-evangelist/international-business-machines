@@ -1,0 +1,87 @@
+openapi: 3.0.3
+info:
+  title: International Business Machines IBM Cloud Object Storage Analyze Sessions API
+  description: The IBM Cloud Object Storage API provides a RESTful interface compatible with S3 for storing and retrieving objects in buckets. It supports features such as multipart uploads, versioning, lifecycle policies, and server-side encryption.
+  version: 1.0.0
+  contact:
+    name: IBM Cloud
+    url: https://cloud.ibm.com/docs/cloud-object-storage
+  license:
+    name: IBM Cloud Terms
+    url: https://www.ibm.com/terms
+servers:
+- url: https://s3.us-south.cloud-object-storage.appdomain.cloud
+  description: US South
+- url: https://s3.eu-de.cloud-object-storage.appdomain.cloud
+  description: EU Germany
+- url: https://s3.eu-gb.cloud-object-storage.appdomain.cloud
+  description: EU Great Britain
+security:
+- bearerAuth: []
+tags:
+- name: Sessions
+  description: Manage conversation sessions.
+paths:
+  /v2/assistants/{assistant_id}/sessions:
+    post:
+      operationId: createSession
+      summary: International Business Machines Create a session
+      description: Create a new session for an assistant. A session is used to send user input to an assistant and receive responses.
+      tags:
+      - Sessions
+      parameters:
+      - name: assistant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: version
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Session created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+  /v2/assistants/{assistant_id}/sessions/{session_id}:
+    delete:
+      operationId: deleteSession
+      summary: International Business Machines Delete a session
+      description: Delete an existing session.
+      tags:
+      - Sessions
+      parameters:
+      - name: assistant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: session_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: version
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Session deleted successfully
+components:
+  schemas:
+    Session:
+      type: object
+      properties:
+        session_id:
+          type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: IAM Token

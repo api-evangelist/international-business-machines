@@ -1,0 +1,178 @@
+openapi: 3.0.3
+info:
+  title: International Business Machines IBM Cloud Object Storage Analyze Messages API
+  description: The IBM Cloud Object Storage API provides a RESTful interface compatible with S3 for storing and retrieving objects in buckets. It supports features such as multipart uploads, versioning, lifecycle policies, and server-side encryption.
+  version: 1.0.0
+  contact:
+    name: IBM Cloud
+    url: https://cloud.ibm.com/docs/cloud-object-storage
+  license:
+    name: IBM Cloud Terms
+    url: https://www.ibm.com/terms
+servers:
+- url: https://s3.us-south.cloud-object-storage.appdomain.cloud
+  description: US South
+- url: https://s3.eu-de.cloud-object-storage.appdomain.cloud
+  description: EU Germany
+- url: https://s3.eu-gb.cloud-object-storage.appdomain.cloud
+  description: EU Great Britain
+security:
+- bearerAuth: []
+tags:
+- name: Messages
+  description: Send messages to an assistant.
+paths:
+  /v2/assistants/{assistant_id}/sessions/{session_id}/message:
+    post:
+      operationId: message
+      summary: International Business Machines Send user input to assistant
+      description: Send user input to an assistant and receive a response within the context of a session.
+      tags:
+      - Messages
+      parameters:
+      - name: assistant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: session_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: version
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MessageRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+  /v2/assistants/{assistant_id}/message:
+    post:
+      operationId: messageStateless
+      summary: International Business Machines Send user input to assistant (stateless)
+      description: Send user input to an assistant without maintaining a session.
+      tags:
+      - Messages
+      parameters:
+      - name: assistant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: version
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StatelessMessageRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatelessMessageResponse'
+components:
+  schemas:
+    StatelessMessageRequest:
+      type: object
+      properties:
+        input:
+          type: object
+          properties:
+            message_type:
+              type: string
+            text:
+              type: string
+        context:
+          type: object
+    MessageResponse:
+      type: object
+      properties:
+        output:
+          type: object
+          properties:
+            generic:
+              type: array
+              items:
+                type: object
+                properties:
+                  response_type:
+                    type: string
+                  text:
+                    type: string
+            intents:
+              type: array
+              items:
+                type: object
+                properties:
+                  intent:
+                    type: string
+                  confidence:
+                    type: number
+            entities:
+              type: array
+              items:
+                type: object
+                properties:
+                  entity:
+                    type: string
+                  value:
+                    type: string
+                  confidence:
+                    type: number
+        context:
+          type: object
+    StatelessMessageResponse:
+      type: object
+      properties:
+        output:
+          type: object
+        context:
+          type: object
+        user_id:
+          type: string
+    MessageRequest:
+      type: object
+      properties:
+        input:
+          type: object
+          properties:
+            message_type:
+              type: string
+              enum:
+              - text
+              - search
+            text:
+              type: string
+            options:
+              type: object
+              properties:
+                return_context:
+                  type: boolean
+                debug:
+                  type: boolean
+        context:
+          type: object
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: IAM Token

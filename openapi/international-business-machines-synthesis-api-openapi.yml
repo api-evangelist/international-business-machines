@@ -1,0 +1,70 @@
+openapi: 3.0.3
+info:
+  title: International Business Machines IBM Cloud Object Storage Analyze Synthesis API
+  description: The IBM Cloud Object Storage API provides a RESTful interface compatible with S3 for storing and retrieving objects in buckets. It supports features such as multipart uploads, versioning, lifecycle policies, and server-side encryption.
+  version: 1.0.0
+  contact:
+    name: IBM Cloud
+    url: https://cloud.ibm.com/docs/cloud-object-storage
+  license:
+    name: IBM Cloud Terms
+    url: https://www.ibm.com/terms
+servers:
+- url: https://s3.us-south.cloud-object-storage.appdomain.cloud
+  description: US South
+- url: https://s3.eu-de.cloud-object-storage.appdomain.cloud
+  description: EU Germany
+- url: https://s3.eu-gb.cloud-object-storage.appdomain.cloud
+  description: EU Great Britain
+security:
+- bearerAuth: []
+tags:
+- name: Synthesis
+  description: Synthesize text to audio.
+paths:
+  /v1/synthesize:
+    post:
+      operationId: synthesize
+      summary: International Business Machines Synthesize audio
+      description: Synthesize text to audio. Returns the audio in the specified format.
+      tags:
+      - Synthesis
+      parameters:
+      - name: Accept
+        in: header
+        schema:
+          type: string
+          enum:
+          - audio/wav
+          - audio/mp3
+          - audio/ogg
+          - audio/flac
+      - name: voice
+        in: query
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - text
+              properties:
+                text:
+                  type: string
+      responses:
+        '200':
+          description: Successful synthesis
+          content:
+            audio/wav:
+              schema:
+                type: string
+                format: binary
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: IAM Token

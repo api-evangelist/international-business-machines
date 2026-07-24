@@ -1,39 +1,40 @@
 openapi: 3.0.3
 info:
-  title: International Business Machines IBM Natural Language Understanding API
-  description: >-
-    The IBM Natural Language Understanding API enables developers to analyze
-    text content for sentiment, emotion, entities, keywords, categories,
-    concepts, relations, and semantic roles. It can process plain text, HTML,
-    or content from a public URL.
+  title: International Business Machines IBM Cloud Object Storage Analyze API
+  description: The IBM Cloud Object Storage API provides a RESTful interface compatible with S3 for storing and retrieving objects in buckets. It supports features such as multipart uploads, versioning, lifecycle policies, and server-side encryption.
   version: 1.0.0
   contact:
     name: IBM Cloud
-    url: https://cloud.ibm.com/apidocs/natural-language-understanding
+    url: https://cloud.ibm.com/docs/cloud-object-storage
   license:
     name: IBM Cloud Terms
     url: https://www.ibm.com/terms
 servers:
-  - url: https://api.us-south.natural-language-understanding.watson.cloud.ibm.com
-    description: US South (Dallas)
-  - url: https://api.eu-de.natural-language-understanding.watson.cloud.ibm.com
-    description: EU Central (Frankfurt)
+- url: https://s3.us-south.cloud-object-storage.appdomain.cloud
+  description: US South
+- url: https://s3.eu-de.cloud-object-storage.appdomain.cloud
+  description: EU Germany
+- url: https://s3.eu-gb.cloud-object-storage.appdomain.cloud
+  description: EU Great Britain
+security:
+- bearerAuth: []
+tags:
+- name: Analyze
+  description: Analyze text content.
 paths:
   /v1/analyze:
     post:
       operationId: analyze
       summary: International Business Machines Analyze text
-      description: >-
-        Analyze text, HTML, or a public URL with one or more text analytics
-        features.
+      description: Analyze text, HTML, or a public URL with one or more text analytics features.
       tags:
-        - Analyze
+      - Analyze
       parameters:
-        - name: version
-          in: query
-          required: true
-          schema:
-            type: string
+      - name: version
+        in: query
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -51,49 +52,34 @@ paths:
           description: Bad request
         '401':
           description: Unauthorized
-  /v1/models/sentiment:
-    get:
-      operationId: listSentimentModels
-      summary: International Business Machines List sentiment models
-      description: List available custom sentiment models.
-      tags:
-        - Models
-      parameters:
-        - name: version
-          in: query
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Successful response
-  /v1/models/categories:
-    get:
-      operationId: listCategoriesModels
-      summary: International Business Machines List categories models
-      description: List available custom categories models.
-      tags:
-        - Models
-      parameters:
-        - name: version
-          in: query
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Successful response
 components:
-  securitySchemes:
-    bearerAuth:
-      type: http
-      scheme: bearer
-      bearerFormat: IAM Token
   schemas:
+    Keyword:
+      type: object
+      properties:
+        text:
+          type: string
+        relevance:
+          type: number
+        count:
+          type: integer
+    Entity:
+      type: object
+      properties:
+        type:
+          type: string
+        text:
+          type: string
+        relevance:
+          type: number
+        count:
+          type: integer
+        confidence:
+          type: number
     AnalyzeRequest:
       type: object
       required:
-        - features
+      - features
       properties:
         text:
           type: string
@@ -228,32 +214,8 @@ components:
                 type: number
               dbpedia_resource:
                 type: string
-    Entity:
-      type: object
-      properties:
-        type:
-          type: string
-        text:
-          type: string
-        relevance:
-          type: number
-        count:
-          type: integer
-        confidence:
-          type: number
-    Keyword:
-      type: object
-      properties:
-        text:
-          type: string
-        relevance:
-          type: number
-        count:
-          type: integer
-security:
-  - bearerAuth: []
-tags:
-  - name: Analyze
-    description: Analyze text content.
-  - name: Models
-    description: Manage custom models.
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: IAM Token
