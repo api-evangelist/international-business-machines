@@ -29,7 +29,7 @@ tags:
 url: https://raw.githubusercontent.com/api-evangelist/international-business-machines/refs/heads/main/apis.yml
 created: '2025-01-01'
 modified: '2026-05-19'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: international-business-machines:international-business-machines-analyze-api
   name: International Business Machines Analyze API
