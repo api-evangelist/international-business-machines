@@ -1,0 +1,148 @@
+{
+  "item": [
+    {
+      "id": "3b721960-9a5a-4a83-907d-d5c786f74408",
+      "name": "Recognition",
+      "description": {
+        "content": "Recognize and transcribe audio.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f160a4d2-0756-45c7-8dcd-1b50ee084570",
+          "name": "International Business Machines Recognize audio",
+          "request": {
+            "name": "International Business Machines Recognize audio",
+            "description": {
+              "content": "Send audio and receive a transcription of the audio content.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "recognize"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "model",
+                  "value": "<string>",
+                  "description": "The model to use for recognition."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "audio/flac"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "file"
+            }
+          },
+          "response": [
+            {
+              "id": "5e179fb9-c432-4adb-b4c8-38bebd31339b",
+              "name": "Successful transcription",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "recognize"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "model",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "content-type",
+                    "value": "string"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "file"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"final\": true,\n      \"alternatives\": [\n        {\n          \"transcript\": \"string\",\n          \"confidence\": 2740.22679030427\n        },\n        {\n          \"transcript\": \"string\",\n          \"confidence\": 2249.8724631015075\n        }\n      ]\n    },\n    {\n      \"final\": false,\n      \"alternatives\": [\n        {\n          \"transcript\": \"string\",\n          \"confidence\": 2631.3129681534197\n        },\n        {\n          \"transcript\": \"string\",\n          \"confidence\": 4359.512123424154\n        }\n      ]\n    }\n  ],\n  \"result_index\": 1614,\n  \"speaker_labels\": [\n    {\n      \"from\": 5782.3660289307445,\n      \"to\": 5329.442953328091,\n      \"speaker\": 2400,\n      \"confidence\": 7553.311468986347\n    },\n    {\n      \"from\": 3207.763696973318,\n      \"to\": 7821.3450873042375,\n      \"speaker\": 7226,\n      \"confidence\": 9474.213011250868\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://s3.us-south.cloud-object-storage.appdomain.cloud",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8c1bfe33-274c-4754-9a88-1ef74221aaed",
+    "name": "International Business Machines IBM Cloud Object Storage Analyze Recognition API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The IBM Cloud Object Storage API provides a RESTful interface compatible with S3 for storing and retrieving objects in buckets. It supports features such as multipart uploads, versioning, lifecycle policies, and server-side encryption.\n\nContact Support:\n Name: IBM Cloud",
+      "type": "text/plain"
+    }
+  }
+}

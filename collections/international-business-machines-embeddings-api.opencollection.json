@@ -1,0 +1,46 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "International Business Machines IBM Cloud Object Storage Analyze Embeddings API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Embeddings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines Generate embeddings",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://s3.us-south.cloud-object-storage.appdomain.cloud/ml/v1/text/embeddings",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generate embeddings from text input for use in downstream tasks such as search and retrieval."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,42 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "International Business Machines IBM Cloud Object Storage Analyze Worker Pools API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Worker Pools",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines List worker pools",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://s3.us-south.cloud-object-storage.appdomain.cloud/v2/getWorkerPools",
+            "params": [
+              {
+                "name": "cluster",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List all worker pools in a cluster."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

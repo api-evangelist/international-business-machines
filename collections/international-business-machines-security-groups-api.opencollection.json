@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "International Business Machines IBM Cloud Object Storage Analyze Security Groups API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Security Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines List security groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://s3.us-south.cloud-object-storage.appdomain.cloud/v1/security_groups",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "generation",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List all security groups in the region."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

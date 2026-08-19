@@ -1,0 +1,204 @@
+{
+  "item": [
+    {
+      "id": "53e28bb1-1e31-472c-b0e9-c638edacc33a",
+      "name": "Custom Language Models",
+      "description": {
+        "content": "Create and manage custom language models.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "86d045ea-cf4e-4be1-8895-dd1edcd12b96",
+          "name": "International Business Machines List custom language models",
+          "request": {
+            "name": "International Business Machines List custom language models",
+            "description": {
+              "content": "List all custom language models.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "customizations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a3a0be54-b2bb-43c5-bce8-3cf15fca2525",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "customizations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1d39a679-37b6-4efc-83a0-f7b461d30482",
+          "name": "International Business Machines Create a custom language model",
+          "request": {
+            "name": "International Business Machines Create a custom language model",
+            "description": {
+              "content": "Create a new custom language model for a specified base model.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "customizations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"base_model_name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c8dcaa9c-b9eb-45c0-b71a-1ed6f720a690",
+              "name": "Custom model created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "customizations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"base_model_name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://s3.us-south.cloud-object-storage.appdomain.cloud",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6f06995e-29cb-466f-9988-c3917d55b70d",
+    "name": "International Business Machines IBM Cloud Object Storage Analyze Custom Language Models API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The IBM Cloud Object Storage API provides a RESTful interface compatible with S3 for storing and retrieving objects in buckets. It supports features such as multipart uploads, versioning, lifecycle policies, and server-side encryption.\n\nContact Support:\n Name: IBM Cloud",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "item": [
+    {
+      "id": "5cb55913-85e9-4675-b024-66fb65b7fc3b",
+      "name": "Worker Nodes",
+      "description": {
+        "content": "Manage worker nodes.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d329a5a0-26e9-468a-bea2-e5b92cf751c3",
+          "name": "International Business Machines List worker nodes",
+          "request": {
+            "name": "International Business Machines List worker nodes",
+            "description": {
+              "content": "List all worker nodes in a cluster.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "getWorkers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cluster",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7f828eed-15bc-4322-b05b-7d072ff01108",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "getWorkers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cluster",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"state\": \"string\",\n    \"status\": \"string\",\n    \"privateIP\": \"string\",\n    \"publicIP\": \"string\",\n    \"machineType\": \"string\",\n    \"kubeVersion\": \"string\",\n    \"poolID\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"state\": \"string\",\n    \"status\": \"string\",\n    \"privateIP\": \"string\",\n    \"publicIP\": \"string\",\n    \"machineType\": \"string\",\n    \"kubeVersion\": \"string\",\n    \"poolID\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://s3.us-south.cloud-object-storage.appdomain.cloud",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b0055ab9-cdc1-413f-9e26-4c05ab88271b",
+    "name": "International Business Machines IBM Cloud Object Storage Analyze Worker Nodes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The IBM Cloud Object Storage API provides a RESTful interface compatible with S3 for storing and retrieving objects in buckets. It supports features such as multipart uploads, versioning, lifecycle policies, and server-side encryption.\n\nContact Support:\n Name: IBM Cloud",
+      "type": "text/plain"
+    }
+  }
+}

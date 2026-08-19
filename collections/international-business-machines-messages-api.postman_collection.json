@@ -1,0 +1,325 @@
+{
+  "item": [
+    {
+      "id": "fce8b791-4b78-48f0-9efe-f3d7e8fdf33f",
+      "name": "Messages",
+      "description": {
+        "content": "Send messages to an assistant.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4062aca2-e0c6-4acb-9129-f483d4abba71",
+          "name": "International Business Machines Send user input to assistant",
+          "request": {
+            "name": "International Business Machines Send user input to assistant",
+            "description": {
+              "content": "Send user input to an assistant and receive a response within the context of a session.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "assistants",
+                ":assistant_id",
+                "sessions",
+                ":session_id",
+                "message"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "assistant_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "session_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"input\": {\n    \"message_type\": \"<string>\",\n    \"text\": \"<string>\",\n    \"options\": {\n      \"return_context\": \"<boolean>\",\n      \"debug\": \"<boolean>\"\n    }\n  },\n  \"context\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b9cc7904-05ce-4094-8ef3-ec7691808ce9",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "assistants",
+                    ":assistant_id",
+                    "sessions",
+                    ":session_id",
+                    "message"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "assistant_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "session_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"input\": {\n    \"message_type\": \"<string>\",\n    \"text\": \"<string>\",\n    \"options\": {\n      \"return_context\": \"<boolean>\",\n      \"debug\": \"<boolean>\"\n    }\n  },\n  \"context\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"output\": {\n    \"generic\": [\n      {\n        \"response_type\": \"string\",\n        \"text\": \"string\"\n      },\n      {\n        \"response_type\": \"string\",\n        \"text\": \"string\"\n      }\n    ],\n    \"intents\": [\n      {\n        \"intent\": \"string\",\n        \"confidence\": 1239.7938002128394\n      },\n      {\n        \"intent\": \"string\",\n        \"confidence\": 3872.4563408871372\n      }\n    ],\n    \"entities\": [\n      {\n        \"entity\": \"string\",\n        \"value\": \"string\",\n        \"confidence\": 7370.828529566937\n      },\n      {\n        \"entity\": \"string\",\n        \"value\": \"string\",\n        \"confidence\": 5873.507234772568\n      }\n    ]\n  },\n  \"context\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "063aafd8-2861-4bc0-93d3-e1a0eea4462a",
+          "name": "International Business Machines Send user input to assistant (stateless)",
+          "request": {
+            "name": "International Business Machines Send user input to assistant (stateless)",
+            "description": {
+              "content": "Send user input to an assistant without maintaining a session.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "assistants",
+                ":assistant_id",
+                "message"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "assistant_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"input\": {\n    \"message_type\": \"<string>\",\n    \"text\": \"<string>\"\n  },\n  \"context\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "218064d2-c86c-49ea-861a-0f620826dcce",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "assistants",
+                    ":assistant_id",
+                    "message"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "assistant_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"input\": {\n    \"message_type\": \"<string>\",\n    \"text\": \"<string>\"\n  },\n  \"context\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"output\": {},\n  \"context\": {},\n  \"user_id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://s3.us-south.cloud-object-storage.appdomain.cloud",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "1c6a1f36-50bd-4686-a3b9-78cfe5c1bbe4",
+    "name": "International Business Machines IBM Cloud Object Storage Analyze Messages API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The IBM Cloud Object Storage API provides a RESTful interface compatible with S3 for storing and retrieving objects in buckets. It supports features such as multipart uploads, versioning, lifecycle policies, and server-side encryption.\n\nContact Support:\n Name: IBM Cloud",
+      "type": "text/plain"
+    }
+  }
+}

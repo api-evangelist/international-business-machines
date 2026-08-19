@@ -1,0 +1,158 @@
+{
+  "item": [
+    {
+      "id": "f9f70648-355e-4521-b0a8-0732f4996f39",
+      "name": "Embeddings",
+      "description": {
+        "content": "Generate text embeddings.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "22607bfd-0c07-4e8d-b041-bf0ff860a7ab",
+          "name": "International Business Machines Generate embeddings",
+          "request": {
+            "name": "International Business Machines Generate embeddings",
+            "description": {
+              "content": "Generate embeddings from text input for use in downstream tasks such as search and retrieval.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ml",
+                "v1",
+                "text",
+                "embeddings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model_id\": \"<string>\",\n  \"inputs\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"project_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "040a84c9-acb3-463b-98a3-23fc4e8b393a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ml",
+                    "v1",
+                    "text",
+                    "embeddings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model_id\": \"<string>\",\n  \"inputs\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"project_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"model_id\": \"string\",\n  \"results\": [\n    {\n      \"embedding\": [\n        1207.4455033018937,\n        5464.966370997114\n      ],\n      \"input_token_count\": 7922\n    },\n    {\n      \"embedding\": [\n        5323.381790219026,\n        232.61341791635192\n      ],\n      \"input_token_count\": 1754\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://s3.us-south.cloud-object-storage.appdomain.cloud",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "cfa6381f-283b-407d-8d4c-777b3d11d83f",
+    "name": "International Business Machines IBM Cloud Object Storage Analyze Embeddings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The IBM Cloud Object Storage API provides a RESTful interface compatible with S3 for storing and retrieving objects in buckets. It supports features such as multipart uploads, versioning, lifecycle policies, and server-side encryption.\n\nContact Support:\n Name: IBM Cloud",
+      "type": "text/plain"
+    }
+  }
+}

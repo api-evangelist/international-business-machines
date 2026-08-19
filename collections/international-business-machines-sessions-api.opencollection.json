@@ -1,0 +1,75 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "International Business Machines IBM Cloud Object Storage Analyze Sessions API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sessions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines Create a session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://s3.us-south.cloud-object-storage.appdomain.cloud/v2/assistants/:assistant_id/sessions",
+            "params": [
+              {
+                "name": "assistant_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Create a new session for an assistant. A session is used to send user input to an assistant and receive responses."
+        },
+        {
+          "info": {
+            "name": "International Business Machines Delete a session",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://s3.us-south.cloud-object-storage.appdomain.cloud/v2/assistants/:assistant_id/sessions/:session_id",
+            "params": [
+              {
+                "name": "assistant_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "session_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Delete an existing session."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

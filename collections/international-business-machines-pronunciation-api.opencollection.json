@@ -1,0 +1,52 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "International Business Machines IBM Cloud Object Storage Analyze Pronunciation API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Pronunciation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines Get pronunciation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://s3.us-south.cloud-object-storage.appdomain.cloud/v1/pronunciation",
+            "params": [
+              {
+                "name": "text",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "voice",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get the phonetic pronunciation of a word."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

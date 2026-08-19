@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "International Business Machines IBM Cloud Object Storage Analyze Recognition API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Recognition",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines Recognize audio",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://s3.us-south.cloud-object-storage.appdomain.cloud/v1/recognize",
+            "headers": [
+              {
+                "name": "content-type",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "model",
+                "value": "",
+                "type": "query",
+                "description": "The model to use for recognition."
+              }
+            ]
+          },
+          "docs": "Send audio and receive a transcription of the audio content."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

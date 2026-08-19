@@ -1,0 +1,260 @@
+{
+  "item": [
+    {
+      "id": "7ec58df8-fef6-42f8-a570-1f099907720b",
+      "name": "Analyze",
+      "description": {
+        "content": "Analyze text content.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f9fac144-a3a5-448f-ba61-83c73889ecf7",
+          "name": "International Business Machines Analyze text",
+          "request": {
+            "name": "International Business Machines Analyze text",
+            "description": {
+              "content": "Analyze text, HTML, or a public URL with one or more text analytics features.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "analyze"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"features\": {\n    \"sentiment\": {\n      \"targets\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"document\": \"<boolean>\"\n    },\n    \"emotion\": {\n      \"targets\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"document\": \"<boolean>\"\n    },\n    \"entities\": {\n      \"limit\": \"<integer>\",\n      \"sentiment\": \"<boolean>\",\n      \"emotion\": \"<boolean>\"\n    },\n    \"keywords\": {\n      \"limit\": \"<integer>\",\n      \"sentiment\": \"<boolean>\",\n      \"emotion\": \"<boolean>\"\n    },\n    \"categories\": {\n      \"limit\": \"<integer>\"\n    },\n    \"concepts\": {\n      \"limit\": \"<integer>\"\n    },\n    \"relations\": \"<object>\",\n    \"semantic_roles\": {\n      \"limit\": \"<integer>\"\n    }\n  },\n  \"text\": \"<string>\",\n  \"html\": \"<string>\",\n  \"url\": \"<string>\",\n  \"language\": \"<string>\",\n  \"clean\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cd146192-d4ca-4c81-bbeb-a5d4fe446322",
+              "name": "Successful analysis",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "analyze"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"features\": {\n    \"sentiment\": {\n      \"targets\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"document\": \"<boolean>\"\n    },\n    \"emotion\": {\n      \"targets\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"document\": \"<boolean>\"\n    },\n    \"entities\": {\n      \"limit\": \"<integer>\",\n      \"sentiment\": \"<boolean>\",\n      \"emotion\": \"<boolean>\"\n    },\n    \"keywords\": {\n      \"limit\": \"<integer>\",\n      \"sentiment\": \"<boolean>\",\n      \"emotion\": \"<boolean>\"\n    },\n    \"categories\": {\n      \"limit\": \"<integer>\"\n    },\n    \"concepts\": {\n      \"limit\": \"<integer>\"\n    },\n    \"relations\": \"<object>\",\n    \"semantic_roles\": {\n      \"limit\": \"<integer>\"\n    }\n  },\n  \"text\": \"<string>\",\n  \"html\": \"<string>\",\n  \"url\": \"<string>\",\n  \"language\": \"<string>\",\n  \"clean\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"language\": \"string\",\n  \"analyzed_text\": \"string\",\n  \"sentiment\": {\n    \"document\": {\n      \"score\": 5247.3332439712485,\n      \"label\": \"string\"\n    }\n  },\n  \"emotion\": {\n    \"document\": {\n      \"emotion\": {\n        \"sadness\": 4642.118732851654,\n        \"joy\": 799.1129250332896,\n        \"fear\": 6156.174807332604,\n        \"disgust\": 6464.625775591046,\n        \"anger\": 4178.176195805539\n      }\n    }\n  },\n  \"entities\": [\n    {\n      \"type\": \"string\",\n      \"text\": \"string\",\n      \"relevance\": 648.5449668056298,\n      \"count\": 6742,\n      \"confidence\": 1430.0870864209103\n    },\n    {\n      \"type\": \"string\",\n      \"text\": \"string\",\n      \"relevance\": 7895.294260550718,\n      \"count\": 5857,\n      \"confidence\": 2786.3102350267477\n    }\n  ],\n  \"keywords\": [\n    {\n      \"text\": \"string\",\n      \"relevance\": 6626.390448286766,\n      \"count\": 6465\n    },\n    {\n      \"text\": \"string\",\n      \"relevance\": 8697.95205572939,\n      \"count\": 3587\n    }\n  ],\n  \"categories\": [\n    {\n      \"label\": \"string\",\n      \"score\": 4652.34922904723\n    },\n    {\n      \"label\": \"string\",\n      \"score\": 3973.087523315892\n    }\n  ],\n  \"concepts\": [\n    {\n      \"text\": \"string\",\n      \"relevance\": 6027.634962191064,\n      \"dbpedia_resource\": \"string\"\n    },\n    {\n      \"text\": \"string\",\n      \"relevance\": 1714.0332807773439,\n      \"dbpedia_resource\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2f2932e0-a233-41e3-a5d4-16e454cec1b2",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "analyze"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"features\": {\n    \"sentiment\": {\n      \"targets\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"document\": \"<boolean>\"\n    },\n    \"emotion\": {\n      \"targets\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"document\": \"<boolean>\"\n    },\n    \"entities\": {\n      \"limit\": \"<integer>\",\n      \"sentiment\": \"<boolean>\",\n      \"emotion\": \"<boolean>\"\n    },\n    \"keywords\": {\n      \"limit\": \"<integer>\",\n      \"sentiment\": \"<boolean>\",\n      \"emotion\": \"<boolean>\"\n    },\n    \"categories\": {\n      \"limit\": \"<integer>\"\n    },\n    \"concepts\": {\n      \"limit\": \"<integer>\"\n    },\n    \"relations\": \"<object>\",\n    \"semantic_roles\": {\n      \"limit\": \"<integer>\"\n    }\n  },\n  \"text\": \"<string>\",\n  \"html\": \"<string>\",\n  \"url\": \"<string>\",\n  \"language\": \"<string>\",\n  \"clean\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "faf5f4af-38c9-4dde-8bd9-302a565d5020",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "analyze"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"features\": {\n    \"sentiment\": {\n      \"targets\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"document\": \"<boolean>\"\n    },\n    \"emotion\": {\n      \"targets\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"document\": \"<boolean>\"\n    },\n    \"entities\": {\n      \"limit\": \"<integer>\",\n      \"sentiment\": \"<boolean>\",\n      \"emotion\": \"<boolean>\"\n    },\n    \"keywords\": {\n      \"limit\": \"<integer>\",\n      \"sentiment\": \"<boolean>\",\n      \"emotion\": \"<boolean>\"\n    },\n    \"categories\": {\n      \"limit\": \"<integer>\"\n    },\n    \"concepts\": {\n      \"limit\": \"<integer>\"\n    },\n    \"relations\": \"<object>\",\n    \"semantic_roles\": {\n      \"limit\": \"<integer>\"\n    }\n  },\n  \"text\": \"<string>\",\n  \"html\": \"<string>\",\n  \"url\": \"<string>\",\n  \"language\": \"<string>\",\n  \"clean\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://s3.us-south.cloud-object-storage.appdomain.cloud",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0d97ed61-e8de-4fcb-9d97-872a1fb71096",
+    "name": "International Business Machines IBM Cloud Object Storage Analyze API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The IBM Cloud Object Storage API provides a RESTful interface compatible with S3 for storing and retrieving objects in buckets. It supports features such as multipart uploads, versioning, lifecycle policies, and server-side encryption.\n\nContact Support:\n Name: IBM Cloud",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "International Business Machines IBM Cloud Object Storage Analyze Voices API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Voices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines List voices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://s3.us-south.cloud-object-storage.appdomain.cloud/v1/voices"
+          },
+          "docs": "List all available voices."
+        },
+        {
+          "info": {
+            "name": "International Business Machines Get a voice",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://s3.us-south.cloud-object-storage.appdomain.cloud/v1/voices/:voice",
+            "params": [
+              {
+                "name": "voice",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get information about a specific voice."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

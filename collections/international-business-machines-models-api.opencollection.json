@@ -1,0 +1,117 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "International Business Machines IBM Cloud Object Storage Analyze Models API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Models",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines List sentiment models",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://s3.us-south.cloud-object-storage.appdomain.cloud/v1/models/sentiment",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List available custom sentiment models."
+        },
+        {
+          "info": {
+            "name": "International Business Machines List categories models",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://s3.us-south.cloud-object-storage.appdomain.cloud/v1/models/categories",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List available custom categories models."
+        },
+        {
+          "info": {
+            "name": "International Business Machines List models",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://s3.us-south.cloud-object-storage.appdomain.cloud/v1/models"
+          },
+          "docs": "List all available language models."
+        },
+        {
+          "info": {
+            "name": "International Business Machines Get a model",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://s3.us-south.cloud-object-storage.appdomain.cloud/v1/models/:model_id",
+            "params": [
+              {
+                "name": "model_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get information about a specific language model."
+        },
+        {
+          "info": {
+            "name": "International Business Machines List foundation models",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://s3.us-south.cloud-object-storage.appdomain.cloud/ml/v1/foundation_model_specs",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve the list of available foundation models."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

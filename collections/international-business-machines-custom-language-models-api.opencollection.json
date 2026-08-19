@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "International Business Machines IBM Cloud Object Storage Analyze Custom Language Models API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Custom Language Models",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "International Business Machines List custom language models",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://s3.us-south.cloud-object-storage.appdomain.cloud/v1/customizations"
+          },
+          "docs": "List all custom language models."
+        },
+        {
+          "info": {
+            "name": "International Business Machines Create a custom language model",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://s3.us-south.cloud-object-storage.appdomain.cloud/v1/customizations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new custom language model for a specified base model."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
