@@ -122,6 +122,8 @@ apis:
   description: Manage Kubernetes clusters.
   humanURL: https://cloud.ibm.com/apidocs/watsonx-ai
   tags:
+  - Cluster
+  tags_raw:
   - Clusters
   properties:
   - type: OpenAPI
@@ -338,6 +340,8 @@ apis:
   description: Send messages to an assistant.
   humanURL: https://cloud.ibm.com/apidocs/watsonx-ai
   tags:
+  - Message
+  tags_raw:
   - Messages
   properties:
   - type: OpenAPI
@@ -854,6 +858,8 @@ apis:
   description: Manage Virtual Private Clouds.
   humanURL: https://cloud.ibm.com/apidocs/watsonx-ai
   tags:
+  - VPC
+  tags_raw:
   - VPCs
   properties:
   - type: OpenAPI
