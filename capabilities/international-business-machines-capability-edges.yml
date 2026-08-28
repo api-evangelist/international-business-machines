@@ -1,0 +1,133 @@
+slug: international-business-machines
+provider: International Business Machines
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Banking & Capital Markets
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 13
+edges:
+- tag: Analyze
+  spec_file: international-business-machines-analyze-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.8
+  evidence: POST /v1/analyze analyze 'Analyze text'; schemas AnalysisResults, Entity, Keyword
+  reason: NLU text analysis (entities, keywords) is an AI/ML service capability under Artificial Intelligence
+    Management.
+- tag: Buckets
+  spec_file: international-business-machines-buckets-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.8
+  evidence: PUT /{bucket} createBucket 'Create a bucket'; 'RESTful interface compatible with S3 for storing
+    and retrieving objects in buckets'
+  reason: Object storage bucket provisioning is cloud storage infrastructure management.
+- tag: Custom Language Models
+  spec_file: international-business-machines-custom-language-models-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.8
+  evidence: POST /v1/customizations createLanguageModel 'Create a custom language model'
+  reason: Custom language model creation/listing is AI/ML model lifecycle management.
+- tag: Embeddings
+  spec_file: international-business-machines-embeddings-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.8
+  evidence: POST /ml/v1/text/embeddings textEmbeddings 'Generate embeddings'
+  reason: Foundation-model embedding generation is an AI/ML inference capability.
+- tag: VPCs
+  spec_file: international-business-machines-vpcs-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.8
+  evidence: POST /v1/vpcs createVpc 'Create a VPC'; schema VPC
+  reason: Creating and listing virtual private clouds is cloud network infrastructure provisioning — IT
+    Infrastructure Management.
+- tag: Clusters
+  spec_file: international-business-machines-clusters-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.75
+  evidence: POST /v2/createCluster createCluster 'Create a cluster'
+  reason: Creating and deleting compute clusters is cloud/compute infrastructure management.
+- tag: Messages
+  spec_file: international-business-machines-messages-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.7
+  evidence: POST /v2/assistants/{assistant_id}/sessions/{session_id}/message 'Send user input to assistant'
+  reason: Conversational AI assistant message exchange is an AI service capability; it is infrastructure
+    for chatbots rather than a specific customer-service deployment, so AI Management is the honest mapping.
+- tag: Models
+  spec_file: international-business-machines-models-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.7
+  evidence: GET /ml/v1/foundation_model_specs listFoundationModels 'List foundation models'; schemas FoundationModelsResponse,
+    SpeechModel
+  reason: Operations enumerate available AI/ML models (sentiment, categories, speech, foundation models)
+    for inference — an AI model catalogue surface, best matched by Artificial Intelligence Management.
+    Not a business-domain capability.
+- tag: Objects
+  spec_file: international-business-machines-objects-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: PUT /{bucket}/{key} putObject 'Upload an object'; 'RESTful interface compatible with S3 for
+    storing and retrieving objects in buckets'
+  reason: Cloud object storage CRUD is IT infrastructure (storage) provisioning and use, not a business
+    capability.
+- tag: Subnets
+  spec_file: international-business-machines-subnets-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: GET /v1/subnets listSubnets 'List subnets'
+  reason: Cloud network subnet inventory is IT infrastructure (network) management.
+- tag: Text Generation
+  spec_file: international-business-machines-text-generation-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.7
+  evidence: POST /ml/v1/text/generation textGeneration 'Generate text'; schemas TextGenerationRequest,
+    TokenizationResponse
+  reason: Foundation-model text generation and tokenisation is AI/ML service consumption, best placed
+    under Artificial Intelligence Management.
+- tag: Worker Nodes
+  spec_file: international-business-machines-worker-nodes-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: GET /v2/getWorkers  getWorkers  International Business Machines List worker nodes
+  reason: Listing cluster worker nodes is compute infrastructure inventory, mapping to IT Infrastructure
+    Management. Thin context (single GET), so moderate confidence.
+- tag: Worker Pools
+  spec_file: international-business-machines-worker-pools-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: GET /v2/getWorkerPools  getWorkerPools  International Business Machines List worker pools
+  reason: Worker pools are groupings of compute nodes in a managed cluster — cloud/compute infrastructure
+    management. Thin evidence, moderate confidence.

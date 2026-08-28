@@ -7,6 +7,17 @@ description: >-
   Cloud Object Storage for scalable data persistence, VPC infrastructure for virtual networking, and Kubernetes Service
   for container orchestration.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: true
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: self-serve
@@ -985,6 +996,9 @@ apis:
   - type: JSONSchema
     url: json-schema/vpc.json
 common:
+  - type: CapabilityMap
+    url: capabilities/international-business-machines-capability-edges.yml
+    name: International Business Machines Business Capability Map
   - type: AgenticAccess
     url: agentic-access/international-business-machines-agentic-access.yml
   - type: VulnerabilityDisclosure
