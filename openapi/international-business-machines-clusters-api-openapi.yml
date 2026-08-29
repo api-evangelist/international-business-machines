@@ -1,21 +1,17 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: International Business Machines IBM Cloud Object Storage Analyze Clusters API
-  description: The IBM Cloud Object Storage API provides a RESTful interface compatible with S3 for storing and retrieving objects in buckets. It supports features such as multipart uploads, versioning, lifecycle policies, and server-side encryption.
-  version: 1.0.0
+  title: International Business Machines IBM Cloud Kubernetes Service Clusters API
+  description: The IBM Cloud Kubernetes Service API enables you to create and manage Kubernetes clusters and worker nodes on IBM Cloud. It supports both community Kubernetes and Red Hat OpenShift clusters with integrated logging, monitoring, and security capabilities.
+  version: 2.0.0
   contact:
     name: IBM Cloud
-    url: https://cloud.ibm.com/docs/cloud-object-storage
+    url: https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2
   license:
     name: IBM Cloud Terms
     url: https://www.ibm.com/terms
 servers:
-- url: https://s3.us-south.cloud-object-storage.appdomain.cloud
-  description: US South
-- url: https://s3.eu-de.cloud-object-storage.appdomain.cloud
-  description: EU Germany
-- url: https://s3.eu-gb.cloud-object-storage.appdomain.cloud
-  description: EU Great Britain
+- url: https://containers.cloud.ibm.com
+  description: Global endpoint
 security:
 - bearerAuth: []
 tags:
@@ -92,6 +88,31 @@ paths:
           description: Cluster deleted
 components:
   schemas:
+    Cluster:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        state:
+          type: string
+        location:
+          type: string
+        region:
+          type: string
+        masterKubeVersion:
+          type: string
+        workerCount:
+          type: integer
+        resourceGroup:
+          type: string
+        provider:
+          type: string
+        type:
+          type: string
+        createdDate:
+          type: string
     CreateClusterRequest:
       type: object
       required:
@@ -127,31 +148,6 @@ components:
                     type: string
                   subnetID:
                     type: string
-    Cluster:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        state:
-          type: string
-        location:
-          type: string
-        region:
-          type: string
-        masterKubeVersion:
-          type: string
-        workerCount:
-          type: integer
-        resourceGroup:
-          type: string
-        provider:
-          type: string
-        type:
-          type: string
-        createdDate:
-          type: string
   securitySchemes:
     bearerAuth:
       type: http

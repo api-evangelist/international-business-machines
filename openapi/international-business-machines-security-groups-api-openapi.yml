@@ -1,21 +1,19 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: International Business Machines IBM Cloud Object Storage Analyze Security Groups API
-  description: The IBM Cloud Object Storage API provides a RESTful interface compatible with S3 for storing and retrieving objects in buckets. It supports features such as multipart uploads, versioning, lifecycle policies, and server-side encryption.
-  version: 1.0.0
+  title: International Business Machines IBM Cloud VPC Security Groups API
+  description: The IBM Cloud Virtual Private Cloud (VPC) API enables you to programmatically provision and manage virtual server instances, networks, storage volumes, load balancers, security groups, and other infrastructure resources within an isolated virtual network on IBM Cloud.
+  version: 2.0.0
   contact:
     name: IBM Cloud
-    url: https://cloud.ibm.com/docs/cloud-object-storage
+    url: https://cloud.ibm.com/apidocs/vpc/latest
   license:
     name: IBM Cloud Terms
     url: https://www.ibm.com/terms
 servers:
-- url: https://s3.us-south.cloud-object-storage.appdomain.cloud
-  description: US South
-- url: https://s3.eu-de.cloud-object-storage.appdomain.cloud
-  description: EU Germany
-- url: https://s3.eu-gb.cloud-object-storage.appdomain.cloud
-  description: EU Great Britain
+- url: https://us-south.iaas.cloud.ibm.com
+  description: US South (Dallas)
+- url: https://eu-de.iaas.cloud.ibm.com
+  description: EU Central (Frankfurt)
 security:
 - bearerAuth: []
 tags:

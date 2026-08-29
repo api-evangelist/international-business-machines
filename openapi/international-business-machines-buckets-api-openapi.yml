@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: International Business Machines IBM Cloud Object Storage Analyze Buckets API
+  title: International Business Machines IBM Cloud Object Storage Buckets API
   description: The IBM Cloud Object Storage API provides a RESTful interface compatible with S3 for storing and retrieving objects in buckets. It supports features such as multipart uploads, versioning, lifecycle policies, and server-side encryption.
   version: 1.0.0
   contact:

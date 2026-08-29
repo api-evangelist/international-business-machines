@@ -1,21 +1,19 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: International Business Machines IBM Cloud Object Storage Analyze Voices API
-  description: The IBM Cloud Object Storage API provides a RESTful interface compatible with S3 for storing and retrieving objects in buckets. It supports features such as multipart uploads, versioning, lifecycle policies, and server-side encryption.
+  title: International Business Machines IBM Text to Speech Voices API
+  description: The IBM Text to Speech API provides speech-synthesis capabilities to convert written text into natural-sounding speech in a variety of languages, dialects, and voices. It supports SSML input and multiple audio formats.
   version: 1.0.0
   contact:
     name: IBM Cloud
-    url: https://cloud.ibm.com/docs/cloud-object-storage
+    url: https://cloud.ibm.com/apidocs/text-to-speech
   license:
     name: IBM Cloud Terms
     url: https://www.ibm.com/terms
 servers:
-- url: https://s3.us-south.cloud-object-storage.appdomain.cloud
-  description: US South
-- url: https://s3.eu-de.cloud-object-storage.appdomain.cloud
-  description: EU Germany
-- url: https://s3.eu-gb.cloud-object-storage.appdomain.cloud
-  description: EU Great Britain
+- url: https://api.us-south.text-to-speech.watson.cloud.ibm.com
+  description: US South (Dallas)
+- url: https://api.eu-de.text-to-speech.watson.cloud.ibm.com
+  description: EU Central (Frankfurt)
 security:
 - bearerAuth: []
 tags:

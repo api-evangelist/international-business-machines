@@ -1,21 +1,28 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: International Business Machines IBM Cloud Object Storage Analyze Models API
-  description: The IBM Cloud Object Storage API provides a RESTful interface compatible with S3 for storing and retrieving objects in buckets. It supports features such as multipart uploads, versioning, lifecycle policies, and server-side encryption.
+  title: International Business Machines Models API
   version: 1.0.0
-  contact:
-    name: IBM Cloud
-    url: https://cloud.ibm.com/docs/cloud-object-storage
   license:
     name: IBM Cloud Terms
     url: https://www.ibm.com/terms
+  description: 'Operations tagged Models across 3 of this provider''s published API definitions: ibm-natural-language-understanding-openapi.yml, ibm-speech-to-text-openapi.yml, ibm-watsonx-ai-openapi.yml. Each path carries the servers of the definition it was published in.'
 servers:
-- url: https://s3.us-south.cloud-object-storage.appdomain.cloud
-  description: US South
-- url: https://s3.eu-de.cloud-object-storage.appdomain.cloud
-  description: EU Germany
-- url: https://s3.eu-gb.cloud-object-storage.appdomain.cloud
-  description: EU Great Britain
+- url: https://api.us-south.natural-language-understanding.watson.cloud.ibm.com
+  description: US South (Dallas)
+- url: https://api.eu-de.natural-language-understanding.watson.cloud.ibm.com
+  description: EU Central (Frankfurt)
+- url: https://api.us-south.speech-to-text.watson.cloud.ibm.com
+  description: US South (Dallas)
+- url: https://api.eu-de.speech-to-text.watson.cloud.ibm.com
+  description: EU Central (Frankfurt)
+- url: https://us-south.ml.cloud.ibm.com
+  description: US South (Dallas)
+- url: https://eu-de.ml.cloud.ibm.com
+  description: EU Central (Frankfurt)
+- url: https://eu-gb.ml.cloud.ibm.com
+  description: EU (London)
+- url: https://jp-tok.ml.cloud.ibm.com
+  description: AP (Tokyo)
 security:
 - bearerAuth: []
 tags:
@@ -38,6 +45,11 @@ paths:
       responses:
         '200':
           description: Successful response
+    servers:
+    - url: https://api.us-south.natural-language-understanding.watson.cloud.ibm.com
+      description: US South (Dallas)
+    - url: https://api.eu-de.natural-language-understanding.watson.cloud.ibm.com
+      description: EU Central (Frankfurt)
   /v1/models/categories:
     get:
       operationId: listCategoriesModels
@@ -54,6 +66,11 @@ paths:
       responses:
         '200':
           description: Successful response
+    servers:
+    - url: https://api.us-south.natural-language-understanding.watson.cloud.ibm.com
+      description: US South (Dallas)
+    - url: https://api.eu-de.natural-language-understanding.watson.cloud.ibm.com
+      description: EU Central (Frankfurt)
   /v1/models:
     get:
       operationId: listModels
@@ -73,6 +90,11 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/SpeechModel'
+    servers:
+    - url: https://api.us-south.speech-to-text.watson.cloud.ibm.com
+      description: US South (Dallas)
+    - url: https://api.eu-de.speech-to-text.watson.cloud.ibm.com
+      description: EU Central (Frankfurt)
   /v1/models/{model_id}:
     get:
       operationId: getModel
@@ -93,6 +115,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SpeechModel'
+    servers:
+    - url: https://api.us-south.speech-to-text.watson.cloud.ibm.com
+      description: US South (Dallas)
+    - url: https://api.eu-de.speech-to-text.watson.cloud.ibm.com
+      description: EU Central (Frankfurt)
   /ml/v1/foundation_model_specs:
     get:
       operationId: listFoundationModels
@@ -121,6 +148,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FoundationModelsResponse'
+    servers:
+    - url: https://us-south.ml.cloud.ibm.com
+      description: US South (Dallas)
+    - url: https://eu-de.ml.cloud.ibm.com
+      description: EU Central (Frankfurt)
+    - url: https://eu-gb.ml.cloud.ibm.com
+      description: EU (London)
+    - url: https://jp-tok.ml.cloud.ibm.com
+      description: AP (Tokyo)
 components:
   schemas:
     SpeechModel:
@@ -172,3 +208,7 @@ components:
       type: http
       scheme: bearer
       bearerFormat: IAM Token
+x-refined-from:
+- ibm-natural-language-understanding-openapi.yml
+- ibm-speech-to-text-openapi.yml
+- ibm-watsonx-ai-openapi.yml

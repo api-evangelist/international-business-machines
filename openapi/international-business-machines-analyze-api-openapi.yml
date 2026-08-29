@@ -1,21 +1,19 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: International Business Machines IBM Cloud Object Storage Analyze API
-  description: The IBM Cloud Object Storage API provides a RESTful interface compatible with S3 for storing and retrieving objects in buckets. It supports features such as multipart uploads, versioning, lifecycle policies, and server-side encryption.
+  title: International Business Machines IBM Natural Language Understanding Analyze API
+  description: The IBM Natural Language Understanding API enables developers to analyze text content for sentiment, emotion, entities, keywords, categories, concepts, relations, and semantic roles. It can process plain text, HTML, or content from a public URL.
   version: 1.0.0
   contact:
     name: IBM Cloud
-    url: https://cloud.ibm.com/docs/cloud-object-storage
+    url: https://cloud.ibm.com/apidocs/natural-language-understanding
   license:
     name: IBM Cloud Terms
     url: https://www.ibm.com/terms
 servers:
-- url: https://s3.us-south.cloud-object-storage.appdomain.cloud
-  description: US South
-- url: https://s3.eu-de.cloud-object-storage.appdomain.cloud
-  description: EU Germany
-- url: https://s3.eu-gb.cloud-object-storage.appdomain.cloud
-  description: EU Great Britain
+- url: https://api.us-south.natural-language-understanding.watson.cloud.ibm.com
+  description: US South (Dallas)
+- url: https://api.eu-de.natural-language-understanding.watson.cloud.ibm.com
+  description: EU Central (Frankfurt)
 security:
 - bearerAuth: []
 tags:
@@ -63,19 +61,70 @@ components:
           type: number
         count:
           type: integer
-    Entity:
+    AnalysisResults:
       type: object
       properties:
-        type:
+        language:
           type: string
-        text:
+        analyzed_text:
           type: string
-        relevance:
-          type: number
-        count:
-          type: integer
-        confidence:
-          type: number
+        sentiment:
+          type: object
+          properties:
+            document:
+              type: object
+              properties:
+                score:
+                  type: number
+                label:
+                  type: string
+        emotion:
+          type: object
+          properties:
+            document:
+              type: object
+              properties:
+                emotion:
+                  type: object
+                  properties:
+                    sadness:
+                      type: number
+                    joy:
+                      type: number
+                    fear:
+                      type: number
+                    disgust:
+                      type: number
+                    anger:
+                      type: number
+        entities:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entity'
+        keywords:
+          type: array
+          items:
+            $ref: '#/components/schemas/Keyword'
+        categories:
+          type: array
+          items:
+            type: object
+            properties:
+              label:
+                type: string
+              score:
+                type: number
+        concepts:
+          type: array
+          items:
+            type: object
+            properties:
+              text:
+                type: string
+              relevance:
+                type: number
+              dbpedia_resource:
+                type: string
     AnalyzeRequest:
       type: object
       required:
@@ -150,70 +199,19 @@ components:
           type: string
         clean:
           type: boolean
-    AnalysisResults:
+    Entity:
       type: object
       properties:
-        language:
+        type:
           type: string
-        analyzed_text:
+        text:
           type: string
-        sentiment:
-          type: object
-          properties:
-            document:
-              type: object
-              properties:
-                score:
-                  type: number
-                label:
-                  type: string
-        emotion:
-          type: object
-          properties:
-            document:
-              type: object
-              properties:
-                emotion:
-                  type: object
-                  properties:
-                    sadness:
-                      type: number
-                    joy:
-                      type: number
-                    fear:
-                      type: number
-                    disgust:
-                      type: number
-                    anger:
-                      type: number
-        entities:
-          type: array
-          items:
-            $ref: '#/components/schemas/Entity'
-        keywords:
-          type: array
-          items:
-            $ref: '#/components/schemas/Keyword'
-        categories:
-          type: array
-          items:
-            type: object
-            properties:
-              label:
-                type: string
-              score:
-                type: number
-        concepts:
-          type: array
-          items:
-            type: object
-            properties:
-              text:
-                type: string
-              relevance:
-                type: number
-              dbpedia_resource:
-                type: string
+        relevance:
+          type: number
+        count:
+          type: integer
+        confidence:
+          type: number
   securitySchemes:
     bearerAuth:
       type: http
