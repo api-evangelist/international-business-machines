@@ -869,7 +869,7 @@ apis:
   description: Manage Virtual Private Clouds.
   humanURL: https://cloud.ibm.com/apidocs/watsonx-ai
   tags:
-  - VPC
+  - VPCs
   tags_raw:
   - VPCs
   properties:
