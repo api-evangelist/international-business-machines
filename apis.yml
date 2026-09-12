@@ -997,6 +997,8 @@ apis:
   - type: JSONSchema
     url: json-schema/vpc.json
 common:
+  - type: Website
+    url: https://www.ibm.com/
   - type: CapabilityMap
     url: capabilities/international-business-machines-capability-edges.yml
     name: International Business Machines Business Capability Map
