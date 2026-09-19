@@ -266,6 +266,8 @@ apis:
   description: Manage assistant environments.
   humanURL: https://cloud.ibm.com/apidocs/watsonx-ai
   tags:
+  - Environment
+  tags_raw:
   - Environments
   properties:
   - type: OpenAPI
@@ -784,6 +786,8 @@ apis:
   description: Manage available voices.
   humanURL: https://cloud.ibm.com/apidocs/watsonx-ai
   tags:
+  - Voice
+  tags_raw:
   - Voices
   properties:
   - type: OpenAPI
@@ -956,6 +960,8 @@ apis:
   description: Manage Virtual Private Clouds.
   humanURL: https://cloud.ibm.com/apidocs/watsonx-ai
   tags:
+  - VPC
+  tags_raw:
   - VPCs
   properties:
   - type: OpenAPI
