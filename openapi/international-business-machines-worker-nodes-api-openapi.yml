@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: International Business Machines IBM Cloud Kubernetes Service Worker Nodes API
+  title: International Business Machines IBM Cloud Kubernetes…
   description: The IBM Cloud Kubernetes Service API enables you to create and manage Kubernetes clusters and worker nodes on IBM Cloud. It supports both community Kubernetes and Red Hat OpenShift clusters with integrated logging, monitoring, and security capabilities.
   version: 2.0.0
   contact:

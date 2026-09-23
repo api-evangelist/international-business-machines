@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: International Business Machines IBM watsonx.ai Text Generation API
+  title: International Business Machines IBM watsonx.ai Text…
   description: The IBM watsonx.ai API enables developers to run text inference, prompt tuning, and other operations on Large Language Models (LLMs). It provides access to multiple open source and IBM foundation models through a unified REST interface for text generation, embeddings, and model management.
   version: 1.0.0
   contact:
@@ -109,6 +109,20 @@ paths:
                 $ref: '#/components/schemas/TokenizationResponse'
 components:
   schemas:
+    TokenizationResponse:
+      type: object
+      properties:
+        model_id:
+          type: string
+        result:
+          type: object
+          properties:
+            token_count:
+              type: integer
+            tokens:
+              type: array
+              items:
+                type: string
     TextGenerationResponse:
       type: object
       properties:
@@ -129,6 +143,19 @@ components:
                 type: integer
               stop_reason:
                 type: string
+    TokenizationRequest:
+      type: object
+      required:
+      - model_id
+      - input
+      - project_id
+      properties:
+        model_id:
+          type: string
+        input:
+          type: string
+        project_id:
+          type: string
     TextGenerationRequest:
       type: object
       required:
@@ -159,33 +186,6 @@ components:
             repetition_penalty:
               type: number
             stop_sequences:
-              type: array
-              items:
-                type: string
-    TokenizationRequest:
-      type: object
-      required:
-      - model_id
-      - input
-      - project_id
-      properties:
-        model_id:
-          type: string
-        input:
-          type: string
-        project_id:
-          type: string
-    TokenizationResponse:
-      type: object
-      properties:
-        model_id:
-          type: string
-        result:
-          type: object
-          properties:
-            token_count:
-              type: integer
-            tokens:
               type: array
               items:
                 type: string

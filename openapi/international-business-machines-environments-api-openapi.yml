@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: International Business Machines IBM watsonx Assistant v2 Environments API
+  title: International Business Machines IBM watsonx Assistant v2…
   description: The IBM watsonx Assistant v2 API enables developers to build conversational interfaces into applications, devices, and channels. The API supports creating and managing assistants, sessions, and message interactions using natural language understanding and dialog management.
   version: 2.0.0
   contact:

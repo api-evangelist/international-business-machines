@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: International Business Machines IBM watsonx Assistant v2 Messages API
+  title: International Business Machines IBM watsonx Assistant v2…
   description: The IBM watsonx Assistant v2 API enables developers to build conversational interfaces into applications, devices, and channels. The API supports creating and managing assistants, sessions, and message interactions using natural language understanding and dialog management.
   version: 2.0.0
   contact:
@@ -91,7 +91,7 @@ paths:
                 $ref: '#/components/schemas/StatelessMessageResponse'
 components:
   schemas:
-    StatelessMessageRequest:
+    MessageRequest:
       type: object
       properties:
         input:
@@ -99,8 +99,18 @@ components:
           properties:
             message_type:
               type: string
+              enum:
+              - text
+              - search
             text:
               type: string
+            options:
+              type: object
+              properties:
+                return_context:
+                  type: boolean
+                debug:
+                  type: boolean
         context:
           type: object
     MessageResponse:
@@ -149,7 +159,7 @@ components:
           type: object
         user_id:
           type: string
-    MessageRequest:
+    StatelessMessageRequest:
       type: object
       properties:
         input:
@@ -157,18 +167,8 @@ components:
           properties:
             message_type:
               type: string
-              enum:
-              - text
-              - search
             text:
               type: string
-            options:
-              type: object
-              properties:
-                return_context:
-                  type: boolean
-                debug:
-                  type: boolean
         context:
           type: object
   securitySchemes:

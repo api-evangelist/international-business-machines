@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: International Business Machines IBM Text to Speech Pronunciation API
+  title: International Business Machines IBM Text to Speech…
   description: The IBM Text to Speech API provides speech-synthesis capabilities to convert written text into natural-sounding speech in a variety of languages, dialects, and voices. It supports SSML input and multiple audio formats.
   version: 1.0.0
   contact:

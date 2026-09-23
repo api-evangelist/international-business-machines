@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: International Business Machines IBM Natural Language Understanding Analyze API
+  title: International Business Machines IBM Natural Language…
   description: The IBM Natural Language Understanding API enables developers to analyze text content for sentiment, emotion, entities, keywords, categories, concepts, relations, and semantic roles. It can process plain text, HTML, or content from a public URL.
   version: 1.0.0
   contact:
@@ -61,70 +61,19 @@ components:
           type: number
         count:
           type: integer
-    AnalysisResults:
+    Entity:
       type: object
       properties:
-        language:
+        type:
           type: string
-        analyzed_text:
+        text:
           type: string
-        sentiment:
-          type: object
-          properties:
-            document:
-              type: object
-              properties:
-                score:
-                  type: number
-                label:
-                  type: string
-        emotion:
-          type: object
-          properties:
-            document:
-              type: object
-              properties:
-                emotion:
-                  type: object
-                  properties:
-                    sadness:
-                      type: number
-                    joy:
-                      type: number
-                    fear:
-                      type: number
-                    disgust:
-                      type: number
-                    anger:
-                      type: number
-        entities:
-          type: array
-          items:
-            $ref: '#/components/schemas/Entity'
-        keywords:
-          type: array
-          items:
-            $ref: '#/components/schemas/Keyword'
-        categories:
-          type: array
-          items:
-            type: object
-            properties:
-              label:
-                type: string
-              score:
-                type: number
-        concepts:
-          type: array
-          items:
-            type: object
-            properties:
-              text:
-                type: string
-              relevance:
-                type: number
-              dbpedia_resource:
-                type: string
+        relevance:
+          type: number
+        count:
+          type: integer
+        confidence:
+          type: number
     AnalyzeRequest:
       type: object
       required:
@@ -199,19 +148,70 @@ components:
           type: string
         clean:
           type: boolean
-    Entity:
+    AnalysisResults:
       type: object
       properties:
-        type:
+        language:
           type: string
-        text:
+        analyzed_text:
           type: string
-        relevance:
-          type: number
-        count:
-          type: integer
-        confidence:
-          type: number
+        sentiment:
+          type: object
+          properties:
+            document:
+              type: object
+              properties:
+                score:
+                  type: number
+                label:
+                  type: string
+        emotion:
+          type: object
+          properties:
+            document:
+              type: object
+              properties:
+                emotion:
+                  type: object
+                  properties:
+                    sadness:
+                      type: number
+                    joy:
+                      type: number
+                    fear:
+                      type: number
+                    disgust:
+                      type: number
+                    anger:
+                      type: number
+        entities:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entity'
+        keywords:
+          type: array
+          items:
+            $ref: '#/components/schemas/Keyword'
+        categories:
+          type: array
+          items:
+            type: object
+            properties:
+              label:
+                type: string
+              score:
+                type: number
+        concepts:
+          type: array
+          items:
+            type: object
+            properties:
+              text:
+                type: string
+              relevance:
+                type: number
+              dbpedia_resource:
+                type: string
   securitySchemes:
     bearerAuth:
       type: http

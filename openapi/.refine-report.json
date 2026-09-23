@@ -34,7 +34,9 @@
     "international-business-machines-messages-api-openapi.yml",
     "international-business-machines-sessions-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
@@ -47,7 +49,9 @@
     "ibm-vpc-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
     "ibm-watsonx-ai-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
     "ibm-watsonx-assistant-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "tag 'Models' spans 3 source specs (ibm-natural-language-understanding-openapi.yml, ibm-speech-to-text-openapi.yml, ibm-watsonx-ai-openapi.yml): per-path servers applied"
+    "tag 'Models' spans 3 source specs (ibm-natural-language-understanding-openapi.yml, ibm-speech-to-text-openapi.yml, ibm-watsonx-ai-openapi.yml): per-path servers applied",
+    "superseded outputs removed: international-business-machines-vp-cs-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 22 total)"
   ],
   "skipped": [
     "international-business-machines-analyze-api-openapi.yml: previously refined output, superseded by openapi/_original/",
@@ -69,7 +73,7 @@
     "international-business-machines-text-generation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "international-business-machines-voices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "international-business-machines-volumes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "international-business-machines-vpcs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "international-business-machines-vp-cs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "international-business-machines-worker-nodes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "international-business-machines-worker-pools-api-openapi.yml: previously refined output, superseded by openapi/_original/"
   ]

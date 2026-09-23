@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: International Business Machines IBM Speech to Text Recognition API
+  title: International Business Machines IBM Speech to Text…
   description: The IBM Speech to Text API provides speech-recognition capabilities to produce transcripts of spoken audio. It supports multiple languages and audio formats, and offers features such as speaker labels, keyword spotting, smart formatting, and custom language and acoustic models.
   version: 1.0.0
   contact:
