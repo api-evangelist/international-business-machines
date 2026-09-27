@@ -109,6 +109,19 @@ paths:
                 $ref: '#/components/schemas/TokenizationResponse'
 components:
   schemas:
+    TokenizationRequest:
+      type: object
+      required:
+      - model_id
+      - input
+      - project_id
+      properties:
+        model_id:
+          type: string
+        input:
+          type: string
+        project_id:
+          type: string
     TokenizationResponse:
       type: object
       properties:
@@ -143,19 +156,6 @@ components:
                 type: integer
               stop_reason:
                 type: string
-    TokenizationRequest:
-      type: object
-      required:
-      - model_id
-      - input
-      - project_id
-      properties:
-        model_id:
-          type: string
-        input:
-          type: string
-        project_id:
-          type: string
     TextGenerationRequest:
       type: object
       required:

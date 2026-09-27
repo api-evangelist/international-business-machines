@@ -52,15 +52,6 @@ paths:
           description: Unauthorized
 components:
   schemas:
-    Keyword:
-      type: object
-      properties:
-        text:
-          type: string
-        relevance:
-          type: number
-        count:
-          type: integer
     Entity:
       type: object
       properties:
@@ -74,6 +65,70 @@ components:
           type: integer
         confidence:
           type: number
+    AnalysisResults:
+      type: object
+      properties:
+        language:
+          type: string
+        analyzed_text:
+          type: string
+        sentiment:
+          type: object
+          properties:
+            document:
+              type: object
+              properties:
+                score:
+                  type: number
+                label:
+                  type: string
+        emotion:
+          type: object
+          properties:
+            document:
+              type: object
+              properties:
+                emotion:
+                  type: object
+                  properties:
+                    sadness:
+                      type: number
+                    joy:
+                      type: number
+                    fear:
+                      type: number
+                    disgust:
+                      type: number
+                    anger:
+                      type: number
+        entities:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entity'
+        keywords:
+          type: array
+          items:
+            $ref: '#/components/schemas/Keyword'
+        categories:
+          type: array
+          items:
+            type: object
+            properties:
+              label:
+                type: string
+              score:
+                type: number
+        concepts:
+          type: array
+          items:
+            type: object
+            properties:
+              text:
+                type: string
+              relevance:
+                type: number
+              dbpedia_resource:
+                type: string
     AnalyzeRequest:
       type: object
       required:
@@ -148,70 +203,15 @@ components:
           type: string
         clean:
           type: boolean
-    AnalysisResults:
+    Keyword:
       type: object
       properties:
-        language:
+        text:
           type: string
-        analyzed_text:
-          type: string
-        sentiment:
-          type: object
-          properties:
-            document:
-              type: object
-              properties:
-                score:
-                  type: number
-                label:
-                  type: string
-        emotion:
-          type: object
-          properties:
-            document:
-              type: object
-              properties:
-                emotion:
-                  type: object
-                  properties:
-                    sadness:
-                      type: number
-                    joy:
-                      type: number
-                    fear:
-                      type: number
-                    disgust:
-                      type: number
-                    anger:
-                      type: number
-        entities:
-          type: array
-          items:
-            $ref: '#/components/schemas/Entity'
-        keywords:
-          type: array
-          items:
-            $ref: '#/components/schemas/Keyword'
-        categories:
-          type: array
-          items:
-            type: object
-            properties:
-              label:
-                type: string
-              score:
-                type: number
-        concepts:
-          type: array
-          items:
-            type: object
-            properties:
-              text:
-                type: string
-              relevance:
-                type: number
-              dbpedia_resource:
-                type: string
+        relevance:
+          type: number
+        count:
+          type: integer
   securitySchemes:
     bearerAuth:
       type: http
