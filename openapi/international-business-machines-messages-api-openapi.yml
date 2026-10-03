@@ -91,6 +91,27 @@ paths:
                 $ref: '#/components/schemas/StatelessMessageResponse'
 components:
   schemas:
+    StatelessMessageRequest:
+      type: object
+      properties:
+        input:
+          type: object
+          properties:
+            message_type:
+              type: string
+            text:
+              type: string
+        context:
+          type: object
+    StatelessMessageResponse:
+      type: object
+      properties:
+        output:
+          type: object
+        context:
+          type: object
+        user_id:
+          type: string
     MessageResponse:
       type: object
       properties:
@@ -128,15 +149,6 @@ components:
                     type: number
         context:
           type: object
-    StatelessMessageResponse:
-      type: object
-      properties:
-        output:
-          type: object
-        context:
-          type: object
-        user_id:
-          type: string
     MessageRequest:
       type: object
       properties:
@@ -157,18 +169,6 @@ components:
                   type: boolean
                 debug:
                   type: boolean
-        context:
-          type: object
-    StatelessMessageRequest:
-      type: object
-      properties:
-        input:
-          type: object
-          properties:
-            message_type:
-              type: string
-            text:
-              type: string
         context:
           type: object
   securitySchemes:
