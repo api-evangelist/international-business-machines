@@ -91,6 +91,15 @@ paths:
                 $ref: '#/components/schemas/StatelessMessageResponse'
 components:
   schemas:
+    StatelessMessageResponse:
+      type: object
+      properties:
+        output:
+          type: object
+        context:
+          type: object
+        user_id:
+          type: string
     StatelessMessageRequest:
       type: object
       properties:
@@ -103,15 +112,6 @@ components:
               type: string
         context:
           type: object
-    StatelessMessageResponse:
-      type: object
-      properties:
-        output:
-          type: object
-        context:
-          type: object
-        user_id:
-          type: string
     MessageResponse:
       type: object
       properties:

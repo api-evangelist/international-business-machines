@@ -52,19 +52,6 @@ paths:
           description: Unauthorized
 components:
   schemas:
-    Entity:
-      type: object
-      properties:
-        type:
-          type: string
-        text:
-          type: string
-        relevance:
-          type: number
-        count:
-          type: integer
-        confidence:
-          type: number
     AnalysisResults:
       type: object
       properties:
@@ -203,6 +190,19 @@ components:
           type: string
         clean:
           type: boolean
+    Entity:
+      type: object
+      properties:
+        type:
+          type: string
+        text:
+          type: string
+        relevance:
+          type: number
+        count:
+          type: integer
+        confidence:
+          type: number
     Keyword:
       type: object
       properties:

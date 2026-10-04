@@ -109,6 +109,53 @@ paths:
                 $ref: '#/components/schemas/TokenizationResponse'
 components:
   schemas:
+    TokenizationRequest:
+      type: object
+      required:
+      - model_id
+      - input
+      - project_id
+      properties:
+        model_id:
+          type: string
+        input:
+          type: string
+        project_id:
+          type: string
+    TokenizationResponse:
+      type: object
+      properties:
+        model_id:
+          type: string
+        result:
+          type: object
+          properties:
+            token_count:
+              type: integer
+            tokens:
+              type: array
+              items:
+                type: string
+    TextGenerationResponse:
+      type: object
+      properties:
+        model_id:
+          type: string
+        created_at:
+          type: string
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              generated_text:
+                type: string
+              generated_token_count:
+                type: integer
+              input_token_count:
+                type: integer
+              stop_reason:
+                type: string
     TextGenerationRequest:
       type: object
       required:
@@ -141,53 +188,6 @@ components:
             stop_sequences:
               type: array
               items:
-                type: string
-    TokenizationResponse:
-      type: object
-      properties:
-        model_id:
-          type: string
-        result:
-          type: object
-          properties:
-            token_count:
-              type: integer
-            tokens:
-              type: array
-              items:
-                type: string
-    TokenizationRequest:
-      type: object
-      required:
-      - model_id
-      - input
-      - project_id
-      properties:
-        model_id:
-          type: string
-        input:
-          type: string
-        project_id:
-          type: string
-    TextGenerationResponse:
-      type: object
-      properties:
-        model_id:
-          type: string
-        created_at:
-          type: string
-        results:
-          type: array
-          items:
-            type: object
-            properties:
-              generated_text:
-                type: string
-              generated_token_count:
-                type: integer
-              input_token_count:
-                type: integer
-              stop_reason:
                 type: string
   securitySchemes:
     bearerAuth:
