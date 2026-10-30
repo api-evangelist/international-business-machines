@@ -64,6 +64,45 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-This profile has been **merged into [ibm](https://apis.io/providers/ibm/)** — the two records described the same company, and that one is canonical.
+> **Retired — merged into [IBM](https://apis.io/providers/ibm/).** The two records described the same company, and that one is canonical. Nothing in this repository is maintained any more.
 
-Nothing here is maintained any more. The company's current profile, rating and artifacts are at [apis.io/providers/ibm/](https://apis.io/providers/ibm/).
+**Why:** Duplicate of ibm (same company, ibm.com). ibm is canonical: the slug follows the domain and it is far richer (55 API entries and the full artifact set). Every one of the 22 international-business-machines split specs carried operations ibm did not have (Cloud Object Storage buckets/objects, VPC, Kubernetes, watsonx.ai, Watson Speech), so all 22 were moved into ibm as IBM-named entries with x-moved-from, plus the AWS S3 compatibility edge. Pages map 1:1 to the moved ibm entries; artifacts map 1:1 where an equivalent exists, otherwise to the provider page. international-business-machines stays live as a pointer profile with no APIs. Approved by Kin Lane 2026-10-13.
+
+**Retired:** 2026-10-13
+
+## Where to go now
+
+The current profile, APIs, artifacts and rating for IBM are on APIs.io at **[apis.io/providers/ibm/](https://apis.io/providers/ibm/)**.
+
+Pages that used to belong to this profile now live at:
+
+- [Ibm Agentic Access](https://apis.io/agentic-access/ibm/ibm-agentic-access/)
+- [Ibm Analyze API](https://apis.io/apis/ibm/ibm-analyze-api/)
+- [Ibm Buckets API](https://apis.io/apis/ibm/ibm-buckets-api/)
+- [Ibm Clusters API](https://apis.io/apis/ibm/ibm-clusters-api/)
+- [Ibm Custom Language Models API](https://apis.io/apis/ibm/ibm-custom-language-models-api/)
+- [Ibm Embeddings API](https://apis.io/apis/ibm/ibm-embeddings-api/)
+- [Ibm Environments API](https://apis.io/apis/ibm/ibm-environments-api/)
+- [Ibm Instances API](https://apis.io/apis/ibm/ibm-instances-api/)
+- [Ibm Messages API](https://apis.io/apis/ibm/ibm-messages-api/)
+- [Ibm Models API](https://apis.io/apis/ibm/ibm-models-api/)
+- [Ibm Objects API](https://apis.io/apis/ibm/ibm-objects-api/)
+- [Ibm Pronunciation API](https://apis.io/apis/ibm/ibm-pronunciation-api/)
+- [Ibm Recognition API](https://apis.io/apis/ibm/ibm-recognition-api/)
+- [Ibm Security Groups API](https://apis.io/apis/ibm/ibm-security-groups-api/)
+- [Ibm Sessions API](https://apis.io/apis/ibm/ibm-sessions-api/)
+- [Ibm Subnets API](https://apis.io/apis/ibm/ibm-subnets-api/)
+- [Ibm Synthesis API](https://apis.io/apis/ibm/ibm-synthesis-api/)
+- [Ibm Text Generation API](https://apis.io/apis/ibm/ibm-text-generation-api/)
+- [Ibm Voices API](https://apis.io/apis/ibm/ibm-voices-api/)
+- [Ibm Volumes API](https://apis.io/apis/ibm/ibm-volumes-api/)
+- [Ibm Vpcs API](https://apis.io/apis/ibm/ibm-vpcs-api/)
+- [Ibm Worker Nodes API](https://apis.io/apis/ibm/ibm-worker-nodes-api/)
+- [Ibm Worker Pools API](https://apis.io/apis/ibm/ibm-worker-pools-api/)
+- [Ibm FinOps](https://apis.io/finops/ibm/ibm-finops/)
+- [Ibm Context](https://apis.io/jsonld/ibm/ibm-context/)
+- …and 6 more on the IBM profile
+
+## Open an issue
+
+Issues about IBM belong on the canonical profile: [open one on api-evangelist/ibm](https://github.com/api-evangelist/ibm/issues/new). If you think this merge was a mistake — these were really two companies — say so there or email [info@apievangelist.com](mailto:info@apievangelist.com).
